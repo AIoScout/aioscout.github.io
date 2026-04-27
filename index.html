@@ -306,14 +306,26 @@
                 setActiveLink(activeId);
             }
 
-            function scrollToSection(targetY) {
-                gsap.to(window, {
-                    duration: 0.6,
-                    scrollTo: {
-                        y: targetY,
-                        autoKill: true
-                    },
-                    onComplete: updateActiveLink
+            function getSectionScrollTop(target) {
+                const headerHeight = $header.outerHeight();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const targetTop = target.getBoundingClientRect().top + scrollTop - headerHeight;
+                const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+                return Math.max(0, Math.min(targetTop, maxScroll));
+            }
+
+            function scrollToSection(target) {
+                requestAnimationFrame(function () {
+                    gsap.killTweensOf(window);
+                    gsap.to(window, {
+                        duration: 0.6,
+                        scrollTo: {
+                            y: getSectionScrollTop(target),
+                            autoKill: false
+                        },
+                        onComplete: updateActiveLink
+                    });
                 });
             }
 
@@ -381,16 +393,17 @@
                     return;
                 }
 
-                const $target = $(targetId);
+                const target = document.getElementById(targetId.slice(1));
 
-                if (!$target.length) {
+                if (!target) {
                     return;
                 }
 
                 event.preventDefault();
+                event.stopPropagation();
                 closeNav();
                 setActiveLink(targetId.slice(1));
-                scrollToSection($target.offset().top - $header.outerHeight());
+                scrollToSection(target);
             });
 
             $(window).on("scroll", updateActiveLink);
