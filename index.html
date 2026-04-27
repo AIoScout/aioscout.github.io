@@ -4,39 +4,409 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIoScout</title>
+    <meta name="description" content="AIoScout builds physical AI learning systems for robotics classrooms, from modular car kits to telemetry dashboards.">
+    <title>AIoScout | Physical AI Learning Platform</title>
     <link rel="icon" href="favicon.ico">
-    <meta name="theme-color" content="#000000">
-    <style>
-        :root {
-            --black: #000000;
-            --orange: #f58331;
-            --gray: #d8d9d8;
-            --purple: #5b5ba8;
-        }
-
-        body {
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: #ffffff;
-            color: var(--purple);
-            font-family: Helvetica, Arial, sans-serif;
-        }
-
-        h1 {
-            font-size: 3rem;
-            color: var(--purple);
-        }
-    </style>
+    <meta name="theme-color" content="#f9f9f8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <img src="logo.svg" alt="AIoScout logo" height="60" style="margin-right: 20px;">
-    <h1>Welcome to AIoScout</h1>
+    <header class="site-header" id="top">
+        <a class="site-logo" href="#top" aria-label="AIoScout home">AIoScout</a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+            <span class="nav-toggle__line"></span>
+            <span class="nav-toggle__line"></span>
+            <span class="nav-toggle__line"></span>
+            <span class="sr-only">Toggle navigation</span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+            <a href="#vision" class="is-active">Vision</a>
+            <a href="#solution">Solution</a>
+            <a href="#curriculum">Curriculum</a>
+            <a href="#business">Business model</a>
+            <a href="#timeline">Timeline</a>
+            <a href="#about">About us</a>
+        </nav>
+
+        <a class="button button--outline header-cta" href="mailto:info.aioscout@gmail.com">Contact us</a>
+    </header>
+
+    <main>
+        <section class="hero section" id="vision" aria-labelledby="hero-title">
+            <div class="hero__inner">
+                <h1 id="hero-title">Software AI is saturated.<br>Physical AI is the frontier.</h1>
+                <p class="hero__quote">"Bridging the physical AI gap requires more than software. It demands an environment where algorithms breathe, fail, and learn in the real world."</p>
+                <a class="button button--dark" href="#solution">Get started</a>
+            </div>
+        </section>
+
+        <section class="feature-row section" id="solution" aria-labelledby="hardware-title">
+            <div class="feature-row__content">
+                <p class="eyebrow">01. The hardware</p>
+                <h2 id="hardware-title">Modular Car Kit</h2>
+                <p>A robust, extensible hardware platform designed for the rigors of physical AI training. Built to withstand real-world friction, interference, and dynamic environments.</p>
+
+                <dl class="spec-list">
+                    <div>
+                        <dt>Sensory Array</dt>
+                        <dd>LIDAR, Vision, IMU</dd>
+                    </div>
+                    <div>
+                        <dt>Compute Unit</dt>
+                        <dd>Edge TPU Integration</dd>
+                    </div>
+                </dl>
+            </div>
+            <figure class="image-card image-card--right">
+                <img src="assets/hardware-car.png" alt="Autonomous modular robotic car chassis on a laboratory surface.">
+            </figure>
+        </section>
+
+        <section class="feature-row feature-row--reverse section section--panel" aria-labelledby="field-title">
+            <figure class="image-card image-card--left">
+                <img src="assets/testing-field.png" alt="Overhead view of a structured dark testing arena with grid lines.">
+            </figure>
+            <div class="feature-row__content">
+                <p class="eyebrow">02. The environment</p>
+                <h2 id="field-title">Smart Game Field</h2>
+                <p>A dynamic, sensor-rich environment that provides ground-truth data. It acts as the physical counterpart to simulated training grounds, offering unpredictable, real-world variables.</p>
+                <a class="text-link" href="#business">Explore specs</a>
+            </div>
+        </section>
+
+        <section class="feature-row section" aria-labelledby="dashboard-title">
+            <div class="feature-row__content">
+                <p class="eyebrow">03. The intelligence</p>
+                <h2 id="dashboard-title">Real-time Dashboard</h2>
+                <p>The neural center of the AIoScout ecosystem. Visualize telemetry, adjust hyperparameters on the fly, and monitor the learning curve as physical agents interact with the Smart Game Field.</p>
+            </div>
+            <figure class="image-card image-card--right">
+                <img src="assets/dashboard-ui.png" alt="Dark mode telemetry dashboard with charts and robotic agent feed.">
+            </figure>
+        </section>
+
+        <section class="section curriculum" id="curriculum" aria-labelledby="curriculum-title">
+            <div class="section-heading">
+                <h2 id="curriculum-title">Built for Classroom</h2>
+            </div>
+
+            <div class="curriculum-grid">
+                <article class="curriculum-track">
+                    <h3>Junior Form</h3>
+                    <ol class="lesson-list">
+                        <li>
+                            <span>01.</span>
+                            <div>
+                                <h4>Introduction to robotics</h4>
+                                <p>Master the fundamentals of differential drive mechanics. Students utilize block coding to translate logic into precise physical movement and actuator states.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span>02.</span>
+                            <div>
+                                <h4>Sensing the world</h4>
+                                <p>Enable autonomous environmental interaction through ultrasonic and IR sensors. Introduces cloud-based IoT logic using real-time traffic signal synchronization.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span>03.</span>
+                            <div>
+                                <h4>Act like human</h4>
+                                <p>Bridge the gap to Computer Vision. Students implement Edge-AI models to recognize road signs and execute autonomous navigation based on visual input.</p>
+                            </div>
+                        </li>
+                    </ol>
+                </article>
+
+                <article class="curriculum-track">
+                    <h3>Senior Form</h3>
+                    <ol class="lesson-list">
+                        <li>
+                            <span>01.</span>
+                            <div>
+                                <h4>Advance control</h4>
+                                <p>Move beyond basic logic to industrial-grade movement. Students implement PID control loops to manage mechanical error and ensure high-precision navigation.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span>02.</span>
+                            <div>
+                                <h4>Sensor fusion</h4>
+                                <p>Advanced IoT integration. Students combine telemetry data from LiDAR and IMU sensors into a live dashboard for fleet monitoring and predictive modeling.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span>03.</span>
+                            <div>
+                                <h4>Self-driving robot</h4>
+                                <p>The capstone project. Integration of path-planning algorithms and vision systems to navigate a dynamic game field with zero manual intervention.</p>
+                            </div>
+                        </li>
+                    </ol>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section--panel business" id="business" aria-labelledby="business-title">
+            <div class="section-heading">
+                <h2 id="business-title">Sustainability and Scale</h2>
+            </div>
+
+            <div class="business-flow">
+                <article class="business-step">
+                    <div class="business-step__icon">
+                        <img src="assets/icon-hardware.svg" alt="" aria-hidden="true">
+                    </div>
+                    <h3>Hardware Acquisition</h3>
+                    <p>Schools purchase the physical ecosystem (Car Kits, Game Fields) once.</p>
+                </article>
+
+                <img class="business-flow__arrow" src="assets/icon-arrow.svg" alt="" aria-hidden="true">
+
+                <div class="business-loop">
+                    <article class="business-step">
+                        <div class="business-step__icon">
+                            <img src="assets/icon-subscription.svg" alt="" aria-hidden="true">
+                        </div>
+                        <h3>Platform Subscription</h3>
+                        <p>Ongoing access to the AI Dashboard and telemetry tools. Tiered by site or per student.</p>
+                    </article>
+
+                    <img class="business-loop__mark" src="assets/loop-icon.png" alt="" aria-hidden="true">
+
+                    <article class="business-step">
+                        <div class="business-step__icon">
+                            <img src="assets/icon-content.svg" alt="" aria-hidden="true">
+                        </div>
+                        <h3>Content Ecosystem</h3>
+                        <p>On-demand purchase of specialized courses and teaching packages.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section timeline-section" id="timeline" aria-labelledby="timeline-title">
+            <div class="section-heading">
+                <h2 id="timeline-title">Development Trajectory</h2>
+            </div>
+
+            <ol class="timeline">
+                <li class="timeline__item timeline__item--current">
+                    <p class="eyebrow">Q4 2024</p>
+                    <h3>Alpha Hardware Revision</h3>
+                    <p>Finalizing the sensor suite and edge-compute integration for the initial batch of modular kits.</p>
+                </li>
+                <li class="timeline__item">
+                    <p class="eyebrow">Q2 2025</p>
+                    <h3>Beta Dashboard Deployment</h3>
+                    <p>Cloud infrastructure for real-time telemetry and fleet management enters closed beta.</p>
+                </li>
+                <li class="timeline__item timeline__item--final">
+                    <p class="eyebrow">July 2026</p>
+                    <h3>HKUST Workshop Showcase</h3>
+                    <p>Full system deployment at the Hong Kong University of Science and Technology. First public demonstration of synchronized fleet learning.</p>
+                </li>
+            </ol>
+        </section>
+
+        <section class="section section--panel team" id="about" aria-labelledby="about-title">
+            <div class="section-heading">
+                <h2 id="about-title">About Us</h2>
+            </div>
+
+            <div class="team-grid">
+                <article class="team-card">
+                    <figure class="team-card__portrait">
+                        <img src="assets/team-song.png" alt="Portrait of Prof. SONG Sheung Hui.">
+                    </figure>
+                    <h3>Prof. SONG Sheung Hui</h3>
+                    <p class="eyebrow">Technical consultant</p>
+                    <p>Former deep-learning researcher with a focus on sustainable AI architectures and neural efficiency.</p>
+                </article>
+
+                <article class="team-card">
+                    <figure class="team-card__portrait">
+                        <img src="assets/team-moretti.png" alt="Portrait of Elena Moretti.">
+                    </figure>
+                    <h3>Elena Moretti</h3>
+                    <p class="eyebrow">Hardware engineering lead</p>
+                    <p>Specializes in edge-computing hardware and low-latency systems designed for educational environments.</p>
+                </article>
+
+                <article class="team-card">
+                    <figure class="team-card__portrait">
+                        <img src="assets/team-vance.png" alt="Portrait of Dr. Julian Vance.">
+                    </figure>
+                    <h3>Dr. Julian Vance</h3>
+                    <p class="eyebrow">Curriculum specialist</p>
+                    <p>Pioneered pedagogical frameworks for complex system thinking and human-AI collaborative learning.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <a class="site-logo" href="#top" aria-label="AIoScout home">AIoScout</a>
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <a href="#">Privacy policy</a>
+            <a href="#">Terms of service</a>
+            <a href="#">Ethical AI charter</a>
+            <a href="mailto:info.aioscout@gmail.com">Contact</a>
+        </nav>
+        <p>&copy; 2024 AIoScout. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        $(function () {
+            gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
+
+            const $body = $("body");
+            const $nav = $("#site-nav");
+            const $toggle = $(".nav-toggle");
+            const $header = $(".site-header");
+            const $navLinks = $(".site-nav a[href^='#']");
+            const revealSections = gsap.utils.toArray("main > .section");
+            const sections = $navLinks.map(function () {
+                return document.querySelector($(this).attr("href"));
+            }).get().filter(Boolean);
+            const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+            function closeNav() {
+                $body.removeClass("nav-open");
+                $nav.removeClass("is-open");
+                $toggle.attr("aria-expanded", "false");
+            }
+
+            function setActiveLink(id) {
+                $navLinks.removeClass("is-active");
+                $navLinks.filter("[href='#" + id + "']").addClass("is-active");
+            }
+
+            function updateActiveLink() {
+                const headerOffset = $header.outerHeight() + 24;
+                const scrollPosition = window.scrollY + headerOffset;
+                let activeId = sections[0].id;
+
+                sections.forEach(function (section) {
+                    if (section.offsetTop <= scrollPosition) {
+                        activeId = section.id;
+                    }
+                });
+
+                setActiveLink(activeId);
+            }
+
+            function scrollToSection(targetY) {
+                gsap.to(window, {
+                    duration: 0.6,
+                    scrollTo: {
+                        y: targetY,
+                        autoKill: true
+                    },
+                    onComplete: updateActiveLink
+                });
+            }
+
+            function setupSectionReveals() {
+                if (prefersReducedMotion) {
+                    return;
+                }
+
+                revealSections.forEach(function (section, index) {
+                    const revealItems = section.querySelectorAll(
+                        ".hero__inner, .feature-row__content, .image-card, .section-heading, .curriculum-track, .business-step, .business-flow__arrow, .business-loop, .timeline__item, .team-card"
+                    );
+
+                    gsap.set(section, {
+                        autoAlpha: index === 0 ? 1 : 0,
+                        y: index === 0 ? 0 : 56,
+                        scale: index === 0 ? 1 : 0.98
+                    });
+
+                    if (revealItems.length) {
+                        gsap.set(revealItems, {
+                            autoAlpha: index === 0 ? 1 : 0,
+                            y: index === 0 ? 0 : 22
+                        });
+                    }
+
+                    const timeline = gsap.timeline({
+                        scrollTrigger: {
+                            trigger: section,
+                            start: index === 0 ? "top bottom" : "top 88%",
+                            once: true
+                        }
+                    });
+
+                    timeline.to(section, {
+                        autoAlpha: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: 0.58,
+                        ease: "power3.out"
+                    });
+
+                    if (revealItems.length) {
+                        timeline.to(revealItems, {
+                            autoAlpha: 1,
+                            y: 0,
+                            duration: 0.42,
+                            stagger: 0.045,
+                            ease: "power2.out"
+                        }, "-=0.3");
+                    }
+                });
+            }
+
+            $toggle.on("click", function () {
+                const isOpen = $nav.toggleClass("is-open").hasClass("is-open");
+                $body.toggleClass("nav-open", isOpen);
+                $toggle.attr("aria-expanded", String(isOpen));
+            });
+
+            $("a[href^='#']").on("click", function (event) {
+                const targetId = $(this).attr("href");
+
+                if (!targetId || targetId === "#") {
+                    return;
+                }
+
+                const $target = $(targetId);
+
+                if (!$target.length) {
+                    return;
+                }
+
+                event.preventDefault();
+                closeNav();
+                setActiveLink(targetId.slice(1));
+                scrollToSection($target.offset().top - $header.outerHeight());
+            });
+
+            $(window).on("scroll", updateActiveLink);
+            $(window).on("resize", function () {
+                if (window.innerWidth > 768) {
+                    closeNav();
+                }
+
+                ScrollTrigger.refresh();
+                updateActiveLink();
+            });
+
+            setupSectionReveals();
+            updateActiveLink();
+        });
+    </script>
 </body>
 
 </html>
