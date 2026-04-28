@@ -5,6 +5,7 @@
     --color-copy: #525252;
     --color-subtle: #a8a29e;
     --color-orange: #f58331;
+    --color-purple: #5b5ba8;
     --color-bg: #f9f9f8;
     --color-panel: #f3f4f3;
     --color-border: #d8d9d8;
@@ -201,12 +202,12 @@ ol {
     padding: var(--section-padding-y) var(--section-padding-x);
 }
 
-main > .section:not(.hero) {
+main>.section:not(.hero) {
     z-index: 2;
     background: var(--color-bg);
 }
 
-main > .section--panel:not(.hero) {
+main>.section--panel:not(.hero) {
     background: transparent;
 }
 
@@ -264,7 +265,8 @@ main > .section--panel:not(.hero) {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: #3b82f6; /* Theme Blue */
+    color: #5b5ba8;
+    /* Theme Purple */
     margin-bottom: 15px;
 }
 
@@ -280,7 +282,8 @@ main > .section--panel:not(.hero) {
     color: #444;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #f9f9f9; /* Subtle line between items */
+    border-bottom: 1px solid #f9f9f9;
+    /* Subtle line between items */
 }
 
 .module-list li:last-child {
@@ -305,6 +308,7 @@ main > .section--panel:not(.hero) {
         flex-direction: column;
         gap: 20px;
     }
+
     .module-column:first-child {
         border-right: none;
         border-bottom: 1px solid #eee;
@@ -316,16 +320,20 @@ main > .section--panel:not(.hero) {
 /* Increase the vertical spacing between timeline phases */
 .timeline__item {
     position: relative;
-    padding-bottom: 60px; /* This creates the space between the content of one phase and the next */
-    padding-left: 30px;   /* Space between the vertical line and your text */
-    border-left: 2px solid #e0e0e0; /* The vertical line */
+    padding-bottom: 60px;
+    /* This creates the space between the content of one phase and the next */
+    padding-left: 30px;
+    /* Space between the vertical line and your text */
+    border-left: 2px solid #e0e0e0;
+    /* The vertical line */
     margin-left: 20px;
 }
 
 /* Ensure the last item doesn't have a huge gap at the bottom of the section */
 .timeline__item--final {
     padding-bottom: 0;
-    border-left: 2px solid transparent; /* Optional: hide the line for the very last point */
+    border-left: 2px solid transparent;
+    /* Optional: hide the line for the very last point */
 }
 
 /* Optional: Make the Phase date (eyebrow) stand out more to separate sections */
@@ -333,7 +341,8 @@ main > .section--panel:not(.hero) {
     display: block;
     margin-bottom: 12px;
     font-weight: 700;
-    color: #3b82f6; /* A professional blue to act as a visual anchor */
+    color: #5b5ba8;
+    /* A professional blue to act as a visual anchor */
     letter-spacing: 0.05em;
 }
 
@@ -391,7 +400,7 @@ main > .section--panel:not(.hero) {
     padding-top: 16px;
 }
 
-.feature-row__content > p:not(.eyebrow) {
+.feature-row__content>p:not(.eyebrow) {
     max-width: 620px;
     margin-top: 14px;
     color: var(--color-muted);
