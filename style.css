@@ -276,7 +276,7 @@ main > .section--panel:not(.hero) {
 }
 
 #solution {
-    margin-top: -200px;
+    margin-top: -10vh;
 }
 
 .feature-row {
@@ -797,7 +797,7 @@ main > .section--panel:not(.hero) {
     }
 
     #solution {
-        margin-top: -128px;
+        margin-top: -20vh;
     }
 
     .feature-row,
