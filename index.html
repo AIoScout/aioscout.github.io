@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -331,7 +332,7 @@
                     </div>
                 </div>
                 <figure class="image-card image-card--right">
-                    <img src="./assets/GroupPhoto2025Fall.jpg" alt="Students testing the prototype in a HK UG course.">
+                    <img src="assets/GroupPhoto2025Fall.jpg" alt="Students testing the prototype in a HK UG course.">
                     <figcaption>Previous iteration deployment in HK UG Course</figcaption>
                 </figure>
             </div>
@@ -343,22 +344,22 @@
                 </div>
 
                 <div class="gallery-grid">
-                    <div class="gallery-item">
+                    <figure class="gallery-item">
                         <img src="./assets/2024FallCarWithoutLabel.svg" alt="Initial prototype chassis">
-                        <div class="gallery-overlay"><span>Early Prototyping</span></div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="./assets/2024FallMap.svg" alt="Initial prototype field">
-                        <div class="gallery-overlay"><span>Initial prototype field</span></div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="./assets/2025FallCarWithoutLabel.svg" alt="Ver. 2.0 prototype chassis">
-                        <div class="gallery-overlay"><span>Ver. 2.0 prototype chassis</span></div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="./assets/2025FallMap.svg" alt="Ver. 2.0 Field">
-                        <div class="gallery-overlay"><span>Ver. 2.0 Field</span></div>
-                    </div>
+                        <figcaption>Early Prototyping</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="./assets/2024FallMap.svg" alt="Field testing sensor logic">
+                        <figcaption>Logic Verification</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="./assets/2025FallCarWithoutLabel.svg" alt="Capstone student project">
+                        <figcaption>Capstone Showcase</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="./assets/2025FallMap.svg" alt="Final modular assembly">
+                        <figcaption>System Integration</figcaption>
+                    </figure>
                 </div>
             </div>
         </section>
@@ -445,9 +446,6 @@
 
             <div class="team-grid">
                 <article class="team-card">
-                    <!-- <figure class="team-card__portrait">
-                <img src="assets/team-jason.png" alt="CHAN Ming Chun, Jason">
-            </figure> -->
                     <h3>CHAN Ming Chun, Jason</h3>
                     <p class="eyebrow">Founder | Hardware Engineering Lead</p>
                     <p>An electronic and robotic engineer specializing in the structural and circuit design of
@@ -457,18 +455,12 @@
                 </article>
 
                 <article class="team-card">
-                    <!-- <figure class="team-card__portrait">
-                <img src="assets/team-vicky.png" alt="ZHANG Yunxin, Vicky">
-            </figure> -->
                     <h3>ZHANG Yunxin, Vicky</h3>
                     <p class="eyebrow">Co-Founder | Software Engineering Lead</p>
                     <p>An HKUST Integrative Systems and Design (ISD) student specializing in full-stack architecture and systems engineering. As the Lead Software Developer, she engineered the frontend and backend framework for the AIoT ecosystem. She is driven by a mission to make high-end technology accessible to the next generation of engineers through intuitive, high-performance educational kits.<p>
                 </article>
 
                 <article class="team-card">
-                    <!-- <figure class="team-card__portrait">
-                <img src="assets/team-song.png" alt="Prof. SONG Sheunghui">
-            </figure> -->
                     <h3>Prof. SONG Sheunghui</h3>
                     <p class="eyebrow">Technical Consultant</p>
                     <p>Dr. S.H. Song is now an Associate Professor jointly appointed by the Division of Integrative
@@ -494,6 +486,7 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -512,6 +505,21 @@
                 return target;
             }).get().filter(Boolean);
             const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            const $gallerySlider = $(".gallery-grid");
+
+            if ($gallerySlider.length) {
+                $gallerySlider.slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    speed: 450,
+                    adaptiveHeight: true,
+                    arrows: true,
+                    dots: true,
+                    prevArrow: '<button type="button" class="slick-prev" aria-label="Previous slide">Previous</button>',
+                    nextArrow: '<button type="button" class="slick-next" aria-label="Next slide">Next</button>'
+                });
+            }
 
             function closeNav() {
                 $body.removeClass("nav-open");
