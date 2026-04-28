@@ -633,7 +633,7 @@ main>.section--panel:not(.hero) {
     min-height: 524px;
     flex-direction: column;
     justify-content: space-between;
-    border-left: 1px solid var(--color-black);
+    /* border-left: 1px solid var(--color-black); */
 }
 
 .timeline__item {
@@ -998,10 +998,9 @@ main>.section--panel:not(.hero) {
     .timeline {
         border-left: 0;
         min-height: auto;
-        gap: 46px;
     }
 
-    .timeline::before {
+    /* .timeline::before {
         position: absolute;
         top: 8px;
         bottom: 8px;
@@ -1009,7 +1008,7 @@ main>.section--panel:not(.hero) {
         width: 1px;
         background: var(--color-black);
         content: "";
-    }
+    } */
 
     .timeline__item {
         padding-left: 30px;
@@ -1080,10 +1079,6 @@ main>.section--panel:not(.hero) {
 
     .team-grid {
         padding: 0 28px;
-    }
-
-    .timeline {
-        gap: 38px;
     }
 
     .timeline__item {
