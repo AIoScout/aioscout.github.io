@@ -240,6 +240,103 @@ main > .section--panel:not(.hero) {
     letter-spacing: -0.02em;
 }
 
+/* Container for the two lists */
+.module-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 25px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+}
+
+.module-column {
+    flex: 1;
+}
+
+/* Vertical line separator between columns on desktop */
+.module-column:first-child {
+    border-right: 1px solid #eee;
+    padding-right: 20px;
+}
+
+.module-header {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #3b82f6; /* Theme Blue */
+    margin-bottom: 15px;
+}
+
+.module-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.module-list li {
+    padding: 8px 0;
+    font-size: 0.95rem;
+    color: #444;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f9f9f9; /* Subtle line between items */
+}
+
+.module-list li:last-child {
+    border-bottom: none;
+}
+
+.module-list li .icon {
+    margin-right: 12px;
+    font-size: 1.1rem;
+}
+
+.more-text {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #888;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .module-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .module-column:first-child {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+}
+
+/* Increase the vertical spacing between timeline phases */
+.timeline__item {
+    position: relative;
+    padding-bottom: 60px; /* This creates the space between the content of one phase and the next */
+    padding-left: 30px;   /* Space between the vertical line and your text */
+    border-left: 2px solid #e0e0e0; /* The vertical line */
+    margin-left: 20px;
+}
+
+/* Ensure the last item doesn't have a huge gap at the bottom of the section */
+.timeline__item--final {
+    padding-bottom: 0;
+    border-left: 2px solid transparent; /* Optional: hide the line for the very last point */
+}
+
+/* Optional: Make the Phase date (eyebrow) stand out more to separate sections */
+.timeline__item .eyebrow {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: #3b82f6; /* A professional blue to act as a visual anchor */
+    letter-spacing: 0.05em;
+}
+
 .hero {
     z-index: 1;
     display: flex;

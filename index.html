@@ -47,50 +47,120 @@
             </div>
         </section>
 
-        <section class="feature-row section" id="solution" aria-labelledby="hardware-title">
-            <div class="feature-row__content">
-                <p class="eyebrow">01. The hardware</p>
-                <h2 id="hardware-title">AIoT Smart Car System</h2>
-                <p>A versatile, hands-on robotics platform powered by the ESP32 processor. Featuring a magnetic modular system for effortless hardware swapping, it integrates a sensory array including RFID, IMU, and Ultrasonic sensors, alongside a web-camera and microphone for real-time Edge-AI applications.</p>
+<section class="feature-row section" id="solution" aria-labelledby="hardware-title">
+    <div class="feature-row__content">
+        <p class="eyebrow">01. The Hardware</p>
+        <h2 id="hardware-title">AIoT Smart Car System</h2>
+        <p>
+            A high-performance robotic platform designed to interact with its environment using on-board MCU processing. 
+            Featuring a <strong>magnetic modular system</strong>, it allows for effortless hardware swapping. 
+            The system offers a wide selection of interchangeable sensing and output modules, alongside an integrated 
+            web-camera and microphone for real-time <strong>Edge AI applications</strong>.
+        </p>
 
-                <dl class="spec-list">
-                    <div>
-                        <dt>Sensory Array</dt>
-                        <dd>Vision, IMU, RFID, IR</dd>
-                    </div>
-                    <div>
-                        <dt>Compute Unit</dt>
-                        <dd>ESP32-S3 MCU</dd>
-                    </div>
-                </dl>
+        <div class="module-container">
+            <div class="module-column">
+                <h4 class="module-header">Sensing Modules</h4>
+                <ul class="module-list">
+                    <li>IR Sensing Module</li>
+                    <li>Ultrasonic Sensor</li>
+                    <li>IMU (Motion/Gyro)</li>
+                    <li>RFID Reader</li>
+                </ul>
             </div>
-            <figure class="image-card image-card--right">
-                <img src="assets/hardware-car.png" alt="Autonomous modular robotic car chassis with ESP32 processor.">
-            </figure>
-        </section>
+            
+            <div class="module-column">
+                <h4 class="module-header">Output Modules</h4>
+                <ul class="module-list">
+                    <li>LCD Display Screen</li>
+                    <li>Active Buzzer</li>
+                    <li>Web-Camera</li>
+                    <li>Microphone</li>
+                </ul>
+            </div>
+        </div>
+        <p class="more-text">...and more modules coming soon!</p>
+    </div>
+    <figure class="image-card image-card--right">
+        <img src="assets/hardware-car.png" alt="Modular AIoT Smart Car with magnetic sensor attachments.">
+    </figure>
+</section>
 
-        <section class="feature-row feature-row--reverse section section--panel" aria-labelledby="field-title">
-            <figure class="image-card image-card--left">
-                <img src="assets/testing-field.png" alt="Smart playfield with traffic light LEDs and ESP32 tiles.">
-            </figure>
-            <div class="feature-row__content">
-                <p class="eyebrow">02. The environment</p>
-                <h2 id="field-title">Physical interactive playfield</h2>
-                <p>A dynamic, sensor-rich arena composed of smart tiles with integrated traffic light LEDs[cite: 8, 9]. These tiles utilize a handshake protocol to reconcile map layouts and provide ground-truth data via a dedicated Python Tile Server[cite: 10, 13, 14].</p>
-                <a class="text-link" href="#business">Explore specs</a>
-            </div>
-        </section>
+<section class="feature-row feature-row--reverse section section--panel" id="solution-field" aria-labelledby="field-title">
+    <figure class="image-card image-card--left">
+        <img src="assets/testing-field.png" alt="Interactive playfield with smart tiles and sensory objects.">
+    </figure>
+    <div class="feature-row__content">
+        <p class="eyebrow">02. The Environment</p>
+        <h2 id="field-title">Physical Interactive Playfield</h2>
+        <p>
+            An interactive playfield is an essential part of the system that provide real-time feedback to the car based on different environmental settings. 
+            This ecosystem uses integrated tracking and customizable obstacles to bridge the gap between digital logic and physical results.
+        </p>
 
-        <section class="feature-row section" aria-labelledby="dashboard-title">
-            <div class="feature-row__content">
-                <p class="eyebrow">03. The intelligence</p>
-                <h2 id="dashboard-title">Smart Teacher Dashboard</h2>
-                <p>The neural center of the ecosystem, built on Next.js and Firebase[cite: 21, 23]. Educators can monitor all devices via a live web interface, manage traffic flow, and visualize student progress through real-time telemetry[cite: 25, 31, 45].</p>
+        <div class="module-container">
+            <div class="module-column">
+                <h4 class="module-header">Interactive Features</h4>
+                <ul class="module-list">
+                    <li>Integrated RFID Tags</li>
+                    <li>Ground-Truth Sensors</li>
+                    <li>Tile-to-Car Feedback</li>
+                    <li>Smart LED Traffic Lights</li>
+                </ul>
             </div>
-            <figure class="image-card image-card--right">
-                <img src="./assets/dashboard-ui.png" alt="Telemetry dashboard showing real-time sensor data and map layout.">
-            </figure>
-        </section>
+            
+            <div class="module-column">
+                <h4 class="module-header">Sensing Applications</h4>
+                <ul class="module-list">
+                    <li>Dynamic Object Detection</li>
+                    <li>Navigation Challenges</li>
+                    <li>Obstacle Avoidance</li>
+                    <li>Traffic Management</li>
+                </ul>
+            </div>
+        </div>
+        <p class="more-text">Place different objects based on the specific needs of your task.</p>
+    </div>
+</section>
+
+       <section class="feature-row section" id="solution-dashboard" aria-labelledby="dashboard-title">
+    <div class="feature-row__content">
+        <p class="eyebrow">03. The Intelligence</p>
+        <h2 id="dashboard-title">Smart Teacher Dashboard</h2>
+        <p>
+            We offer a solution that extends beyond local computing and reactive sensing. Our system forms a cohesive <strong>IoT network</strong> across multiple devices, controlled through a centralized dashboard.
+        </p>
+        <p>
+            Instead of managing a single device, users can perform <strong>high-level control</strong> of the entire network. The dashboard visualizes live conditions on the playfield, enabling advanced operations such as global <strong>traffic flow control</strong> and real-time environment synchronization.
+        </p>
+
+        <div class="module-container">
+            <div class="module-column">
+                <h4 class="module-header">Network Control</h4>
+                <ul class="module-list">
+                    <li>Multi-Device Fleet Management</li>
+                    <li>High-Level Network Logic</li>
+                    <li>Remote Device Overrides</li>
+                    <li>Real-Time Telemetry Data</li>
+                </ul>
+            </div>
+            
+            <div class="module-column">
+                <h4 class="module-header">Live Monitoring</h4>
+                <ul class="module-list">
+                    <li>Visual Playfield Map</li>
+                    <li>Traffic Flow Regulation</li>
+                    <li>Environmental Sync Status</li>
+                    <li>Student Progress Tracking</li>
+                </ul>
+            </div>
+        </div>
+        <p class="more-text">Experience full-scale system coordination through a single web interface.</p>
+    </div>
+    <figure class="image-card image-card--right">
+        <img src="assets/dashboard-ui.png" alt="Teacher Dashboard interface showing multiple car statuses and traffic control settings.">
+    </figure>
+</section>
 
 <section class="feature-row section" id="features-coding" aria-labelledby="coding-title">
     <div class="feature-row__content">
@@ -258,29 +328,37 @@
             </div>
         </section>
 
-        <section class="section timeline-section" id="timeline" aria-labelledby="timel  ine-title">
-            <div class="section-heading">
-                <h2 id="timeline-title">Development Trajectory</h2>
-            </div>
+<section class="section timeline-section" id="timeline" aria-labelledby="timeline-title">
+    <div class="section-heading">
+        <h2 id="timeline-title">Development Trajectory</h2>
+    </div>
 
-            <ol class="timeline">
-                <li class="timeline__item">
-                    <p class="eyebrow">Q4 2024</p>
-                    <h3>Alpha Hardware Revision</h3>
-                    <p>Initial prototyping and testing within HKUST.</p>
-                </li>
-                <li class="timeline__item">
-                    <p class="eyebrow">Q2 2025</p>
-                    <h3>Beta Dashboard Deployment</h3>
-                    <p>Cloud infrastructure for real-time telemetry and fleet management.</p>
-                </li>
-                <li class="timeline__item timeline__item--current timeline__item--final">
-                    <p class="eyebrow">Nov 2026</p>
-                    <h3>Commercial Launch</h3>
-                    <p>Full system deployment with commercial packaging and interactive wiki support.</p>
-                </li>
-            </ol>
-        </section>
+    <ol class="timeline">
+        <li class="timeline__item">
+            <p class="eyebrow">Phase 01: 2024 Q2</p>
+            <h3>Academic Validation & Pilot</h3>
+            <p>The first version of our AIoT prototype was designed and successfully deployed in an  undergraduate course in Hong Kong for rigorous hardware testing and pedagogical verification.</p>
+        </li>
+
+        <li class="timeline__item">
+            <p class="eyebrow">Phase 02: 2024 - 2025</p>
+            <h3>Extended Pilot Program</h3>
+            <p>Conducting second and third rounds of pilot programs across various educational settings to refine the user interface and hardware durability based on student "trial and error."</p>
+        </li>
+
+        <li class="timeline__item timeline__item--current">
+            <p class="eyebrow">Phase 03: 2025 Q3 – Ongoing</p>
+            <h3>Commercial R&D & Integration</h3>
+            <p>Developing an improved, integrated version of the entire system. This phase focuses on hardware refinement, seamless IoT connectivity, and finalizing the Smart Teacher Dashboard.</p>
+        </li>
+
+        <li class="timeline__item timeline__item--final">
+            <p class="eyebrow">Launch: 2026 Q3</p>
+            <h3>Commercial Deployment</h3>
+            <p>Full-scale market launch featuring commercial-grade packaging, ready-to-use teaching materials, and a complete interactive wiki for global STEAM classrooms.</p>
+        </li>
+    </ol>
+</section>
 
         <section class="section section--panel team" id="about" aria-labelledby="about-title">
             <div class="section-heading">
@@ -289,9 +367,9 @@
 
             <div class="team-grid">
                 <article class="team-card">
-                    <figure class="team-card__portrait">
+                    <!-- <figure class="team-card__portrait">
                         <img src="assets/team-song.png" alt="Portrait of Prof. SONG Sheunghui.">
-                    </figure>
+                    </figure> -->
                     <h3>Prof. SONG Sheunghui</h3>
                     <p class="eyebrow">Technical Consultant</p>
                     <p>A Deep-learning researcher focused on sustainable AI architectures and Edge-AI education. He currently serves as an Associate Editor for <em>IEEE Transactions on Education</em>.</p>
@@ -299,18 +377,18 @@
                 </article>
 
                 <article class="team-card">
-                    <figure class="team-card__portrait">
-                        <img src="assets/team-jason.png" alt="Portrait of CHAN Ming Chun, Jason.">
-                    </figure>
+                    <!-- <figure class="team-card__portrait"> -->
+                        <!-- <img src="assets/team-jason.png" alt="Portrait of CHAN Ming Chun, Jason."> -->
+                    <!-- </figure> -->
                     <h3>CHAN Ming Chun, Jason</h3>
                     <p class="eyebrow">Hardware Engineering Lead</p>
                     <p>R&D Lead specializing in edge-computing hardware and low-latency systems designed for educational environments.</p>
                 </article>
 
                 <article class="team-card">
-                    <figure class="team-card__portrait">
+                    <!-- <figure class="team-card__portrait">
                         <img src="assets/team-vicky.png" alt="Portrait of ZHANG Yunxin, Vicky.">
-                    </figure>
+                    </figure> -->
                     <h3>ZHANG Yunxin, Vicky</h3>
                     <p class="eyebrow">Software Engineering Lead</p>
                     <p>Focuses on pedagogical frameworks for human-AI collaborative learning and intuitive web interfaces.</p>
