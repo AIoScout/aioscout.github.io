@@ -317,6 +317,27 @@ main>.section--panel:not(.hero) {
     }
 }
 
+/* Fix for Curriculum Title Alignment */
+.curriculum-grid {
+    display: flex;
+    align-items: stretch; /* Ensures both columns are the same height */
+    gap: 40px;
+}
+
+.curriculum-track {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.curriculum-track h3 {
+    min-height: 3rem; /* Forces titles to take up the same amount of space */
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #3b82f6; /* Visual anchor */
+    margin-bottom: 20px;
+}
+
 /* Increase the vertical spacing between timeline phases */
 .timeline__item {
     position: relative;
