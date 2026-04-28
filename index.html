@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AIoScout builds physical AI learning systems for robotics classrooms, from modular car kits to telemetry dashboards.">
+    <meta name="description"
+        content="AIoScout builds physical AI learning systems for robotics classrooms, from modular car kits to telemetry dashboards.">
     <title>AIoScout | Physical AI Learning Platform</title>
     <link rel="icon" href="favicon.ico">
     <meta name="theme-color" content="#f9f9f8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -29,71 +31,257 @@
             <a href="#vision" class="is-active">Vision</a>
             <a href="#solution">Solution</a>
             <a href="#curriculum">Curriculum</a>
-            <a href="#business">Business model</a>
+            <a href="#pilot">Pilot Program</a>
+            <a href="#business">Business Model</a>
+            <a href="#development-progress">Previous</a>
             <a href="#timeline">Timeline</a>
-            <a href="#about">About us</a>
+            <a href="#about">About Us</a>
         </nav>
 
-        <a class="button button--outline header-cta" href="mailto:info.aioscout@gmail.com">Contact us</a>
+        <a class="button button--outline header-cta" href="mailto:contact@aioscout.io">Contact us</a>
     </header>
 
     <main>
         <section class="hero section" id="vision" aria-labelledby="hero-title">
             <div class="hero__inner">
                 <h1 id="hero-title">Software AI is saturated.<br>Physical AI is the frontier.</h1>
-                <p class="hero__quote">"Bridging the physical AI gap requires more than software. It demands an environment where algorithms breathe, fail, and learn in the real world."</p>
+                <p class="hero__quote">"Bridging the physical AI gap requires more than code. It demands a hands-on
+                    environment where algorithms move from simulation to reality—learning through trial, error, and
+                    physical interaction."</p>
                 <a class="button button--dark" href="#solution">Get started</a>
             </div>
         </section>
 
         <section class="feature-row section" id="solution" aria-labelledby="hardware-title">
             <div class="feature-row__content">
-                <p class="eyebrow">01. The hardware</p>
-                <h2 id="hardware-title">Modular Car Kit</h2>
-                <p>A robust, extensible hardware platform designed for the rigors of physical AI training. Built to withstand real-world friction, interference, and dynamic environments.</p>
+                <p class="eyebrow">01. The Hardware</p>
+                <h2 id="hardware-title">AIoT Smart Car System</h2>
+                <p>
+                    A high-performance robotic platform designed to interact with its environment using on-board MCU
+                    processing.
+                    Featuring a <strong>magnetic modular system</strong>, it allows for effortless hardware swapping.
+                    The system offers a wide selection of interchangeable sensing and output modules, alongside an
+                    integrated
+                    web-camera and microphone for real-time <strong>Edge AI applications</strong>.
+                </p>
 
-                <dl class="spec-list">
-                    <div>
-                        <dt>Sensory Array</dt>
-                        <dd>LIDAR, Vision, IMU</dd>
+                <div class="module-container">
+                    <div class="module-column">
+                        <h4 class="module-header">Sensing Modules</h4>
+                        <ul class="module-list">
+                            <li>IR Sensing Module</li>
+                            <li>Ultrasonic Sensor</li>
+                            <li>IMU (Motion/Gyro)</li>
+                            <li>RFID Reader</li>
+                        </ul>
                     </div>
-                    <div>
-                        <dt>Compute Unit</dt>
-                        <dd>Edge TPU Integration</dd>
+
+                    <div class="module-column">
+                        <h4 class="module-header">Output Modules</h4>
+                        <ul class="module-list">
+                            <li>LCD Display Screen</li>
+                            <li>Active Buzzer</li>
+                            <li>Web-Camera</li>
+                            <li>Microphone</li>
+                        </ul>
                     </div>
-                </dl>
+                </div>
+                <p class="more-text">...and more modules coming soon!</p>
             </div>
             <figure class="image-card image-card--right">
-                <img src="assets/hardware-car.png" alt="Autonomous modular robotic car chassis on a laboratory surface.">
+                <img src="./assets/hardware-car.png" alt="Modular AIoT Smart Car with magnetic sensor attachments.">
             </figure>
         </section>
 
-        <section class="feature-row feature-row--reverse section section--panel" aria-labelledby="field-title">
+        <section class="feature-row feature-row--reverse section section--panel" id="solution-field"
+            aria-labelledby="field-title">
             <figure class="image-card image-card--left">
-                <img src="assets/testing-field.png" alt="Overhead view of a structured dark testing arena with grid lines.">
+                <img src="./assets/testing-field.png" alt="Interactive playfield with smart tiles and sensory objects.">
             </figure>
             <div class="feature-row__content">
-                <p class="eyebrow">02. The environment</p>
-                <h2 id="field-title">Smart Game Field</h2>
-                <p>A dynamic, sensor-rich environment that provides ground-truth data. It acts as the physical counterpart to simulated training grounds, offering unpredictable, real-world variables.</p>
-                <a class="text-link" href="#business">Explore specs</a>
+                <p class="eyebrow">02. The Environment</p>
+                <h2 id="field-title">Physical Interactive Playfield</h2>
+                <p>
+                    An interactive playfield is an essential part of the system that provide real-time feedback to the
+                    car based on different environmental settings.
+                    This ecosystem uses integrated tracking and customizable obstacles to bridge the gap between digital
+                    logic and physical results.
+                </p>
+
+                <div class="module-container">
+                    <div class="module-column">
+                        <h4 class="module-header">Interactive Features</h4>
+                        <ul class="module-list">
+                            <li>Integrated RFID Tags</li>
+                            <li>Ground-Truth Sensors</li>
+                            <li>Tile-to-Car Feedback</li>
+                            <li>Smart LED Traffic Lights</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-column">
+                        <h4 class="module-header">Sensing Applications</h4>
+                        <ul class="module-list">
+                            <li>Dynamic Object Detection</li>
+                            <li>Navigation Challenges</li>
+                            <li>Obstacle Avoidance</li>
+                            <li>Traffic Management</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="more-text">Place different objects based on the specific needs of your task.</p>
             </div>
         </section>
 
-        <section class="feature-row section" aria-labelledby="dashboard-title">
+        <section class="feature-row section" id="solution-dashboard" aria-labelledby="dashboard-title">
             <div class="feature-row__content">
-                <p class="eyebrow">03. The intelligence</p>
-                <h2 id="dashboard-title">Real-time Dashboard</h2>
-                <p>The neural center of the AIoScout ecosystem. Visualize telemetry, adjust hyperparameters on the fly, and monitor the learning curve as physical agents interact with the Smart Game Field.</p>
+                <p class="eyebrow">03. The Intelligence</p>
+                <h2 id="dashboard-title">Smart Teacher Dashboard</h2>
+                <p>
+                    We offer a solution that extends beyond local computing and reactive sensing. Our system forms a
+                    cohesive <strong>IoT network</strong> across multiple devices, controlled through a centralized
+                    dashboard.
+                </p>
+                <p>
+                    Instead of managing a single device, users can perform <strong>high-level control</strong> of the
+                    entire network. The dashboard visualizes live conditions on the playfield, enabling advanced
+                    operations such as global <strong>traffic flow control</strong> and real-time environment
+                    synchronization.
+                </p>
+
+                <div class="module-container">
+                    <div class="module-column">
+                        <h4 class="module-header">Network Control</h4>
+                        <ul class="module-list">
+                            <li>Multi-Device Fleet Management</li>
+                            <li>High-Level Network Logic</li>
+                            <li>Remote Device Overrides</li>
+                            <li>Real-Time Telemetry Data</li>
+                        </ul>
+                    </div>
+
+                    <div class="module-column">
+                        <h4 class="module-header">Live Monitoring</h4>
+                        <ul class="module-list">
+                            <li>Visual Playfield Map</li>
+                            <li>Traffic Flow Regulation</li>
+                            <li>Environmental Sync Status</li>
+                            <li>Student Progress Tracking</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="more-text">Experience full-scale system coordination through a single web interface.</p>
             </div>
             <figure class="image-card image-card--right">
-                <img src="assets/dashboard-ui.png" alt="Dark mode telemetry dashboard with charts and robotic agent feed.">
+                <img src="./assets/DashBoardUI.svg"
+                    alt="Teacher Dashboard interface showing multiple car statuses and traffic control settings.">
             </figure>
+        </section>
+
+        <section class="feature-row feature-row--reverse section section--panel" id="features-coding"
+            aria-labelledby="coding-title">
+            <figure class="image-card image-card--left">
+                <img src="./assets/BlockCoding.png" alt="Visual block coding interface for the AIoT car.">
+            </figure>
+            <div class="feature-row__content">
+                <p class="eyebrow">Key Feature: Learning</p>
+                <h2 id="coding-title">User-Friendly Block Coding</h2>
+                <p>Skip the syntax errors and focus on the logic. We utilize <strong>intuitive block-based
+                        programming</strong> instead of traditional line coding, significantly reducing the learning
+                    curve. This allows students to learn computational thinking in a visual, interactive way that
+                    provides instant physical feedback.</p>
+                <ul class="check-list">
+                    <li>Drag-and-drop logic blocks</li>
+                    <li>No Python/C++ installation required</li>
+                    <li>Real-time code execution</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="feature-row section" id="features-field" aria-labelledby="field-interaction-title">
+            <div class="feature-row__content">
+                <p class="eyebrow">Key Feature: Environment</p>
+                <h2 id="field-interaction-title">Reactive Smart Game Field</h2>
+                <p>Our Smart Game Field isn't just a track; it's a <strong>real-time ecosystem</strong>. Using a
+                    dedicated tile server, the field provides constant data to the car, allowing it to "sense" the
+                    environment and interact with external elements like traffic lights and neighboring tiles.</p>
+                <ul class="check-list">
+                    <li>Automated traffic reconciliation</li>
+                    <li>Live environment data streaming</li>
+                    <li>Dynamic path-planning challenges</li>
+                </ul>
+            </div>
+            <!-- <figure class="image-card image-card--right">
+                <img src="./assets/feature-interaction.png"
+                    alt="AIoT car interacting with smart tiles and traffic lights.">
+            </figure> -->
+        </section>
+
+        <section class="feature-row feature-row--reverse section section--panel" id="features-teacher"
+            aria-labelledby="teacher-control-title">
+            <figure class="image-card image-card--left">
+                <img src="./assets/feature-teacher-board.png"
+                    alt="Teacher dashboard displaying multiple student device statuses.">
+            </figure>
+            <div class="feature-row__content">
+                <p class="eyebrow">Key Feature: Management</p>
+                <h2 id="teacher-control-title">Advanced Classroom Insights</h2>
+                <p>The <strong>Smart Teacher Board</strong> empowers educators to oversee the entire classroom at once.
+                    Monitor multiple device statuses and track student progress in real-time, enabling you to adjust
+                    difficulty levels or troubleshoot issues instantly to enhance the collective learning experience.
+                </p>
+                <ul class="check-list">
+                    <li>Live telemetry for every student kit</li>
+                    <li>Fleet management & remote reset</li>
+                    <li>Performance analytics dashboard</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section learning-outcomes" id="outcomes" aria-labelledby="outcomes-title">
+            <div class="section-heading">
+                <p class="eyebrow">Learning Outcomes</p>
+                <h2 id="outcomes-title">Mastering the Physical AI Line</h2>
+            </div>
+
+            <div class="module-container">
+                <div class="module-column">
+                    <h4 class="module-header">Technical Competencies</h4>
+                    <ul class="module-list">
+                        <li>
+                            <strong class="outcome-term">Embedded Systems:</strong>
+                            <span class="outcome-description">Programming MCUs for real-time hardware control.</span>
+                        </li>
+                        <li>
+                            <strong class="outcome-term">Edge AI:</strong>
+                            <span class="outcome-description">Deploying vision and audio models for local inference.</span>
+                        </li>
+                        <li>
+                            <strong class="outcome-term">Kinematics:</strong>
+                            <span class="outcome-description">Understanding differential drive and PID control loops.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="module-column">
+                    <h4 class="module-header">The Physical AI Bridge</h4>
+                    <ul class="module-list">
+                        <li>
+                            <strong class="outcome-term">Data to Action:</strong>
+                            <span class="outcome-description">Translating sensor telemetry into mechanical movement.</span>
+                        </li>
+                        <li>
+                            <strong class="outcome-term">Network Orchestration:</strong>
+                            <span class="outcome-description">Managing a multi-device IoT ecosystem via a live dashboard.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <section class="section curriculum" id="curriculum" aria-labelledby="curriculum-title">
             <div class="section-heading">
-                <h2 id="curriculum-title">Built for Classroom</h2>
+                <h2 id="curriculum-title">Built for the Classroom</h2>
             </div>
 
             <div class="curriculum-grid">
@@ -103,22 +291,25 @@
                         <li>
                             <span>01.</span>
                             <div>
-                                <h4>Introduction to robotics</h4>
-                                <p>Master the fundamentals of differential drive mechanics. Students utilize block coding to translate logic into precise physical movement and actuator states.</p>
+                                <h4>Introduction to Robotics</h4>
+                                <p>Master differential drive mechanics using intuitive block coding to translate logic
+                                    into physical movement.</p>
                             </div>
                         </li>
                         <li>
                             <span>02.</span>
                             <div>
-                                <h4>Sensing the world</h4>
-                                <p>Enable autonomous environmental interaction through ultrasonic and IR sensors. Introduces cloud-based IoT logic using real-time traffic signal synchronization.</p>
+                                <h4>Sensing the World</h4>
+                                <p>Enable autonomous interaction through ultrasonic and IR sensors, introducing
+                                    fundamental IoT logic.</p>
                             </div>
                         </li>
                         <li>
                             <span>03.</span>
                             <div>
-                                <h4>Act like human</h4>
-                                <p>Bridge the gap to Computer Vision. Students implement Edge-AI models to recognize road signs and execute autonomous navigation based on visual input.</p>
+                                <h4>Visual Perception</h4>
+                                <p>Introduction to Computer Vision by implementing Edge-AI models for basic road sign
+                                    and color detection.</p>
                             </div>
                         </li>
                     </ol>
@@ -130,27 +321,64 @@
                         <li>
                             <span>01.</span>
                             <div>
-                                <h4>Advance control</h4>
-                                <p>Move beyond basic logic to industrial-grade movement. Students implement PID control loops to manage mechanical error and ensure high-precision navigation.</p>
+                                <h4>Advanced Control Systems</h4>
+                                <p>Implement PID control loops to manage mechanical error and ensure industrial-grade
+                                    precision navigation.</p>
                             </div>
                         </li>
                         <li>
                             <span>02.</span>
                             <div>
-                                <h4>Sensor fusion</h4>
-                                <p>Advanced IoT integration. Students combine telemetry data from LiDAR and IMU sensors into a live dashboard for fleet monitoring and predictive modeling.</p>
+                                <h4>Sensor Fusion & IoT</h4>
+                                <p>Combine telemetry from vision and IMU sensors into a live dashboard for predictive
+                                    system modeling.</p>
                             </div>
                         </li>
                         <li>
                             <span>03.</span>
                             <div>
-                                <h4>Self-driving robot</h4>
-                                <p>The capstone project. Integration of path-planning algorithms and vision systems to navigate a dynamic game field with zero manual intervention.</p>
+                                <h4>Self-Driving Capstone</h4>
+                                <p>Integrate path-planning and vision systems to navigate a dynamic game field with zero
+                                    manual intervention.</p>
                             </div>
                         </li>
                     </ol>
                 </article>
             </div>
+        </section>
+
+        <section class="section pilot-program" id="pilot" aria-labelledby="pilot-title">
+            <div class="section-heading">
+                <h2 id="pilot-title">Proven in the Classroom</h2>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-row__content">
+                    <p class="eyebrow">Pilot Phase: 2024 – 2026</p>
+                    <h3>Validated in Higher Education</h3>
+                    <p>
+                        For the past two years, our AIoT ecosystem has served as the core curriculum and final project
+                        material for a leading UG course in HK.
+                        Through this rigorous academic environment, our previous generation of smart cars and playfields
+                        were tested by over 100+ students.
+                    </p>
+                    <p>
+                        This concept has been proven to provide a superior <strong>interactive learning
+                            experience</strong>, bridging the gap between design theory and technical implementation.
+                        Following this success, we are now evolving and extending this platform specifically for
+                        secondary school STEAM education.
+                    </p>
+                    <div style="margin-top: 2rem;">
+                        <a class="button button--dark" href="https://aioscout.github.io/FinalProjectDocs/"
+                            target="_blank">Technical Documentation</a>
+                    </div>
+                </div>
+                <figure class="image-card image-card--right">
+                    <img src="assets/GroupPhoto2025Fall.jpg" alt="Students testing the prototype in a HK UG course.">
+                    <figcaption>Previous iteration deployment in HK UG Course</figcaption>
+                </figure>
+            </div>
+
         </section>
 
         <section class="section section--panel business" id="business" aria-labelledby="business-title">
@@ -161,33 +389,60 @@
             <div class="business-flow">
                 <article class="business-step">
                     <div class="business-step__icon">
-                        <img src="assets/icon-hardware.svg" alt="" aria-hidden="true">
+                        <img src="./assets/icon-hardware.svg" alt="" aria-hidden="true">
                     </div>
                     <h3>Hardware Acquisition</h3>
                     <p>Schools purchase the physical ecosystem (Car Kits, Game Fields) once.</p>
                 </article>
 
-                <img class="business-flow__arrow" src="assets/icon-arrow.svg" alt="" aria-hidden="true">
+                <img class="business-flow__arrow" src="./assets/icon-arrow.svg" alt="" aria-hidden="true">
 
                 <div class="business-loop">
                     <article class="business-step">
                         <div class="business-step__icon">
-                            <img src="assets/icon-subscription.svg" alt="" aria-hidden="true">
+                            <img src="./assets/icon-subscription.svg" alt="" aria-hidden="true">
                         </div>
                         <h3>Platform Subscription</h3>
-                        <p>Ongoing access to the AI Dashboard and telemetry tools. Tiered by site or per student.</p>
+                        <p>Ongoing access to the AI Dashboard and telemetry tools.</p>
                     </article>
 
-                    <img class="business-loop__mark" src="assets/loop-icon.png" alt="" aria-hidden="true">
+                    <img class="business-loop__mark" src="./assets/loop-icon.png" alt="" aria-hidden="true">
 
                     <article class="business-step">
                         <div class="business-step__icon">
-                            <img src="assets/icon-content.svg" alt="" aria-hidden="true">
+                            <img src="./assets/icon-content.svg" alt="" aria-hidden="true">
                         </div>
                         <h3>Content Ecosystem</h3>
                         <p>On-demand purchase of specialized courses and teaching packages.</p>
                     </article>
                 </div>
+            </div>
+        </section>
+
+        <section class="section development-progress" id="development-progress"
+            aria-labelledby="development-progress-title">
+            <div class="section-heading">
+                <h2 id="development-progress-title">Development and Capstone Progress</h2>
+                <p>A look at our journey from university prototypes to the current AIoT ecosystem.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <figure class="gallery-item">
+                    <img src="./assets/2024FallCarWithoutLabel.svg" alt="Initial prototype chassis">
+                    <figcaption>Early Prototyping</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="./assets/2024FallMap.svg" alt="Field testing sensor logic">
+                    <figcaption>Logic Verification</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="./assets/2025FallCarWithoutLabel.svg" alt="Capstone student project">
+                    <figcaption>Capstone Showcase</figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="./assets/2025FallMap.svg" alt="Final modular assembly">
+                    <figcaption>System Integration</figcaption>
+                </figure>
             </div>
         </section>
 
@@ -197,20 +452,33 @@
             </div>
 
             <ol class="timeline">
-                <li class="timeline__item timeline__item--current">
-                    <p class="eyebrow">Q4 2024</p>
-                    <h3>Alpha Hardware Revision</h3>
-                    <p>Finalizing the sensor suite and edge-compute integration for the initial batch of modular kits.</p>
-                </li>
                 <li class="timeline__item">
-                    <p class="eyebrow">Q2 2025</p>
-                    <h3>Beta Dashboard Deployment</h3>
-                    <p>Cloud infrastructure for real-time telemetry and fleet management enters closed beta.</p>
+                    <p class="eyebrow">Phase 01: 2024 Q2</p>
+                    <h3>Academic Validation & Pilot</h3>
+                    <p>The first version of our AIoT prototype was designed and successfully deployed in an
+                        undergraduate course in Hong Kong for rigorous hardware testing and pedagogical verification.
+                    </p>
                 </li>
+
+                <li class="timeline__item">
+                    <p class="eyebrow">Phase 02: 2024 - 2025</p>
+                    <h3>Extended Pilot Program</h3>
+                    <p>Conducting second and third rounds of pilot programs across various educational settings to
+                        refine the user interface and hardware durability based on student "trial and error."</p>
+                </li>
+
+                <li class="timeline__item timeline__item--current">
+                    <p class="eyebrow">Phase 03: 2025 Q3 – Ongoing</p>
+                    <h3>Commercial R&D & Integration</h3>
+                    <p>Developing an improved, integrated version of the entire system. This phase focuses on hardware
+                        refinement, seamless IoT connectivity, and finalizing the Smart Teacher Dashboard.</p>
+                </li>
+
                 <li class="timeline__item timeline__item--final">
-                    <p class="eyebrow">July 2026</p>
-                    <h3>HKUST Workshop Showcase</h3>
-                    <p>Full system deployment at the Hong Kong University of Science and Technology. First public demonstration of synchronized fleet learning.</p>
+                    <p class="eyebrow">Launch: 2026 Q3</p>
+                    <h3>Commercial Deployment</h3>
+                    <p>Full-scale market launch featuring commercial-grade packaging, ready-to-use teaching materials,
+                        and a complete interactive wiki for global STEAM classrooms.</p>
                 </li>
             </ol>
         </section>
@@ -222,47 +490,52 @@
 
             <div class="team-grid">
                 <article class="team-card">
-                    <figure class="team-card__portrait">
-                        <img src="assets/team-song.png" alt="Portrait of Prof. SONG Sheung Hui.">
-                    </figure>
-                    <h3>Prof. SONG Sheung Hui</h3>
-                    <p class="eyebrow">Technical consultant</p>
-                    <p>Former deep-learning researcher with a focus on sustainable AI architectures and neural efficiency.</p>
+                    <h3>CHAN Ming Chun, Jason</h3>
+                    <p class="eyebrow">Founder | Hardware Engineering Lead</p>
+                    <p>An electronic and robotic engineer specializing in the structural and circuit design of
+                        high-performance systems. As the former Captain of the RoboMaster Team ENTERPRIZE, he brings
+                        elite competitive robotics experience to the R&D process, overseeing the mechanical and
+                        electronic integration of the AIoT ecosystem.</p>
                 </article>
 
                 <article class="team-card">
-                    <figure class="team-card__portrait">
-                        <img src="assets/team-moretti.png" alt="Portrait of Elena Moretti.">
-                    </figure>
-                    <h3>Elena Moretti</h3>
-                    <p class="eyebrow">Hardware engineering lead</p>
-                    <p>Specializes in edge-computing hardware and low-latency systems designed for educational environments.</p>
+                    <h3>ZHANG Yunxin, Vicky</h3>
+                    <p class="eyebrow">Co-Founder | Software Engineering Lead</p>
+                    <p>An HKUST Integrative Systems and Design (ISD) student specializing in full-stack architecture and
+                        systems engineering. As the Lead Software Developer, she engineered the frontend and backend
+                        framework for the AIoT ecosystem. She is driven by a mission to make high-end technology
+                        accessible to the next generation of engineers through intuitive, high-performance educational
+                        kits.
+                    <p>
                 </article>
 
                 <article class="team-card">
-                    <figure class="team-card__portrait">
-                        <img src="assets/team-vance.png" alt="Portrait of Dr. Julian Vance.">
-                    </figure>
-                    <h3>Dr. Julian Vance</h3>
-                    <p class="eyebrow">Curriculum specialist</p>
-                    <p>Pioneered pedagogical frameworks for complex system thinking and human-AI collaborative learning.</p>
+                    <h3>Prof. SONG Sheunghui</h3>
+                    <p class="eyebrow">Technical Consultant</p>
+                    <p>Dr. S.H. Song is now an Associate Professor jointly appointed by the Division of Integrative
+                        Systems and Design (ISD) and the Department of Electronic and Computer Engineering (ECE) at the
+                        Hong Kong University of Science and Technology (HKUST). He interested in the research on
+                        Engineering Education and served as an Associate Editor for the IEEE Transactions on Education.
+                    </p>
+                    <a class="text-link" href="https://eeshsong.home.ece.ust.hk" target="_blank">Academic Profile</a>
                 </article>
             </div>
         </section>
+
     </main>
 
     <footer class="site-footer" id="contact">
         <a class="site-logo" href="#top" aria-label="AIoScout home">AIoScout</a>
         <nav class="footer-nav" aria-label="Footer navigation">
-            <a href="#">Privacy policy</a>
-            <a href="#">Terms of service</a>
-            <a href="#">Ethical AI charter</a>
-            <a href="mailto:info.aioscout@gmail.com">Contact</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="mailto:contact@aioscout.io">Contact</a>
         </nav>
-        <p>&copy; 2024 AIoScout. All rights reserved.</p>
+        <p>&copy; 2026 AIoScout. All rights reserved.</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -277,9 +550,25 @@
             const $navLinks = $(".site-nav a[href^='#']");
             const revealSections = gsap.utils.toArray("main > .section");
             const sections = $navLinks.map(function () {
-                return document.querySelector($(this).attr("href"));
+                const target = document.querySelector($(this).attr("href"));
+                return target;
             }).get().filter(Boolean);
             const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            const $gallerySlider = $(".gallery-grid");
+
+            if ($gallerySlider.length) {
+                $gallerySlider.slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    speed: 450,
+                    adaptiveHeight: true,
+                    arrows: true,
+                    dots: true,
+                    prevArrow: '<button type="button" class="slick-prev" aria-label="Previous slide">Previous</button>',
+                    nextArrow: '<button type="button" class="slick-next" aria-label="Next slide">Next</button>'
+                });
+            }
 
             function closeNav() {
                 $body.removeClass("nav-open");
@@ -295,7 +584,7 @@
             function updateActiveLink() {
                 const headerOffset = $header.outerHeight() + 24;
                 const scrollPosition = window.scrollY + headerOffset;
-                let activeId = sections[0].id;
+                let activeId = sections.length > 0 ? sections[0].id : "";
 
                 sections.forEach(function (section) {
                     if (section.offsetTop <= scrollPosition) {
@@ -303,7 +592,7 @@
                     }
                 });
 
-                setActiveLink(activeId);
+                if (activeId) setActiveLink(activeId);
             }
 
             function getSectionScrollTop(target) {
@@ -330,9 +619,7 @@
             }
 
             function setupSectionReveals() {
-                if (prefersReducedMotion) {
-                    return;
-                }
+                if (prefersReducedMotion) return;
 
                 revealSections.forEach(function (section, index) {
                     const revealItems = section.querySelectorAll(
@@ -388,16 +675,9 @@
 
             $("a[href^='#']").on("click", function (event) {
                 const targetId = $(this).attr("href");
-
-                if (!targetId || targetId === "#") {
-                    return;
-                }
-
+                if (!targetId || targetId === "#") return;
                 const target = document.getElementById(targetId.slice(1));
-
-                if (!target) {
-                    return;
-                }
+                if (!target) return;
 
                 event.preventDefault();
                 event.stopPropagation();
@@ -408,10 +688,7 @@
 
             $(window).on("scroll", updateActiveLink);
             $(window).on("resize", function () {
-                if (window.innerWidth > 768) {
-                    closeNav();
-                }
-
+                if (window.innerWidth > 768) closeNav();
                 ScrollTrigger.refresh();
                 updateActiveLink();
             });
