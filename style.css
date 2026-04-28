@@ -11,7 +11,7 @@
     --color-border: #d8d9d8;
     --color-rule: #e2e2e2;
     --font-main: "Inter", Arial, sans-serif;
-    --max-page: 1280px;
+    --max-page: 1320px;
     --section-padding-x: 128px;
     --section-padding-y: 48px;
     --header-height: 96px;
@@ -235,6 +235,10 @@ main>.section--panel:not(.hero) {
     text-align: center;
 }
 
+.section-heading--left {
+    text-align: left;
+}
+
 .section-heading h2,
 .feature-row h2,
 .timeline-section h2 {
@@ -285,7 +289,7 @@ main>.section--panel:not(.hero) {
     color: var(--color-copy);
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #f9f9f9;
+    /* border-bottom: 1px solid #f9f9f9; */
     /* Subtle line between items */
 }
 
@@ -298,11 +302,12 @@ main>.section--panel:not(.hero) {
     font-size: 1.1rem;
 }
 
-.more-text {
+.more-text,
+.image-card figcaption {
     margin-top: 15px;
     font-size: 0.85rem;
     font-style: italic;
-    color: #888;
+    color: var(--color-muted);
 }
 
 /* Mobile Responsiveness */
@@ -337,8 +342,8 @@ main>.section--panel:not(.hero) {
     min-height: 3rem; /* Forces titles to take up the same amount of space */
     display: flex;
     align-items: center;
-    border-bottom: 2px solid var(--color-purple); /* Visual anchor */
-    margin-bottom: 20px;
+    border-bottom: 2px solid var(--color-purple);
+    /* margin-bottom: 20px; */
 }
 
 /* Increase the vertical spacing between timeline phases */
@@ -487,27 +492,29 @@ main>.section--panel:not(.hero) {
 .image-card {
     flex: 0 0 400px;
     width: 400px;
-    aspect-ratio: 1;
     overflow: visible;
 }
 
 .image-card img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
 }
 
-.image-card--right {
+.image-card--right img {
     box-shadow: 16px -16px 0 var(--color-ink);
 }
 
-.image-card--left {
+.image-card--left img {
     box-shadow: -16px -16px 0 var(--color-ink);
 }
 
-.gallery-container {
+/* .gallery-container {
     width: 100%;
     margin-top: 32px;
+}
+
+.development-progress .gallery-container {
+    margin-top: 0;
 }
 
 .gallery-container .section-heading {
@@ -525,11 +532,17 @@ main>.section--panel:not(.hero) {
     color: var(--color-muted);
     font-size: 16px;
     line-height: 1.6;
+} */
+
+.section-heading p {
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin-top: 16px;
 }
 
 .gallery-grid {
     width: 100%;
-    max-width: 920px;
+    max-width: 760px;
     margin: 0 auto;
 }
 
@@ -607,7 +620,7 @@ main>.section--panel:not(.hero) {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: 16px;
+    margin-block: 0;
     padding: 0;
     list-style: none;
 }
@@ -1107,8 +1120,8 @@ main>.section--panel:not(.hero) {
         align-self: center;
     }
 
-    .image-card--right,
-    .image-card--left,
+    .image-card--right img,
+    .image-card--left img,
     .team-card__portrait {
         box-shadow: 12px -12px 0 var(--color-ink);
     }
