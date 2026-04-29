@@ -689,7 +689,7 @@
 
             $(window).on("scroll", updateActiveLink);
             $(window).on("resize", function () {
-                if (window.innerWidth > 768) closeNav();
+                if (window.innerWidth > 960) closeNav();
                 ScrollTrigger.refresh();
                 updateActiveLink();
             });
