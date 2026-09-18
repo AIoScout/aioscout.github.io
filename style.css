@@ -93,11 +93,17 @@ ol {
 .site-logo {
     display: inline-flex;
     align-items: center;
+    gap: 10px;
     color: var(--color-black);
     font-size: 20px;
     font-weight: 800;
     line-height: 1.4;
     letter-spacing: 0.05em;
+}
+
+.site-logo img {
+    width: 28px;
+    height: 28px;
 }
 
 .site-nav {
@@ -1382,5 +1388,165 @@ main>.section--panel:not(.hero) {
 
     .timeline__item {
         padding-left: 24px;
+    }
+}
+
+/* Links page (QR landing at /links) */
+.links-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* On mobile browsers 100vh ignores the URL bar; dvh tracks the visible area */
+    min-height: 100dvh;
+}
+
+.links-page main {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+}
+
+/* The Back button is hidden on smaller screens site-wide, but on the links
+   page (reached via QR, mostly on phones) it is the explicit way home */
+.links-page__header .header-cta {
+    display: inline-flex;
+}
+
+@media (max-width: 350px) {
+    .links-page__header .header-cta {
+        display: none;
+    }
+}
+
+.links-hero {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+    padding: 48px var(--section-padding-x);
+    text-align: center;
+}
+
+.links-hero__inner {
+    display: flex;
+    width: 100%;
+    max-width: 560px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.links-hero__logo {
+    width: 96px;
+    height: 96px;
+    margin-bottom: 48px;
+}
+
+.link-list {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 14px;
+    text-align: left;
+}
+
+.link-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 20px;
+    border: 1px solid var(--color-black);
+    background: #ffffff;
+    color: var(--color-ink);
+    transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.link-card:hover,
+.link-card:focus-visible {
+    background: var(--color-black);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.link-card__icon {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+}
+
+.link-card__icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.link-card__body {
+    display: flex;
+    flex: 1 1 auto;
+    min-width: 0;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.link-card__title {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.link-card__handle {
+    color: rgba(26, 28, 28, 0.7);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.link-card:hover .link-card__handle,
+.link-card:focus-visible .link-card__handle {
+    color: rgba(249, 249, 248, 0.7);
+}
+
+.link-card__arrow {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    color: var(--color-subtle);
+    transition: color 180ms ease;
+}
+
+.link-card__arrow svg {
+    width: 18px;
+    height: 18px;
+}
+
+.link-card:hover .link-card__arrow,
+.link-card:focus-visible .link-card__arrow {
+    color: var(--color-orange);
+}
+
+.links-page__footer {
+    justify-content: center;
+    padding: 24px 64px;
+}
+
+@media (max-width: 768px) {
+    .links-hero {
+        padding: 32px var(--section-padding-x);
+    }
+
+    .links-hero__logo {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 32px;
+    }
+
+    .link-list {
+        gap: 12px;
+    }
+
+    .links-page__footer {
+        align-items: center;
+        padding: 20px 24px;
     }
 }
