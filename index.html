@@ -34,7 +34,7 @@
             <a href="#solution">Solution</a>
             <a href="#outcomes">Outcomes</a>
             <a href="#curriculum">Curriculum</a>
-            <a href="#pilot">Pilot Program</a>
+            <a href="#news">News</a>
             <a href="#business">Business Model</a>
             <a href="#development-progress">Previous</a>
             <a href="#timeline">Timeline</a>
@@ -46,6 +46,9 @@
 
     <main>
         <section class="hero section" id="vision" aria-labelledby="hero-title">
+            <video class="hero__video" src="assets/hero-demo.mov" autoplay muted loop playsinline
+                aria-hidden="true"></video>
+            <div class="hero__overlay" aria-hidden="true"></div>
             <div class="hero__inner">
                 <h1 id="hero-title">Software AI is saturated.<br>Physical AI is the frontier.</h1>
                 <p class="hero__quote">"Bridging the physical AI gap requires more than code. It demands a hands-on
@@ -92,7 +95,7 @@
                 <p class="more-text">...and more modules coming soon!</p>
             </div>
             <figure class="image-card image-card--right">
-                <img src="./assets/hardware-car.jpg" alt="Modular AIoT Smart Car with magnetic sensor attachments.">
+                <img src="./assets/smart-car-demo.jpg" alt="Modular AIoT Smart Car with magnetic sensor attachments.">
             </figure>
         </section>
 
@@ -176,7 +179,7 @@
                 <p class="more-text">Experience full-scale system coordination through a single web interface.</p>
             </div>
             <figure class="image-card image-card--right">
-                <img src="./assets/DashBoardUI.svg"
+                <img src="./assets/control-panel-demo.jpg"
                     alt="Teacher Dashboard interface showing multiple car statuses and traffic control settings.">
             </figure>
         </section>
@@ -214,16 +217,16 @@
                     <li>Dynamic path-planning challenges</li>
                 </ul>
             </div>
-            <!-- <figure class="image-card image-card--right">
-                <img src="./assets/feature-interaction.png"
-                    alt="AIoT car interacting with smart tiles and traffic lights.">
-            </figure> -->
+            <figure class="image-card image-card--right">
+                <img src="./assets/road-sign-demo.jpg"
+                    alt="Smart car recognizing road signs and reacting on the smart game field.">
+            </figure>
         </section>
 
         <section class="feature-row feature-row--reverse section section--panel" id="features-teacher"
             aria-labelledby="teacher-control-title">
             <figure class="image-card image-card--left">
-                <img src="./assets/feature-teacher-board.png"
+                <img src="./assets/classroom-insights.jpg"
                     alt="Teacher dashboard displaying multiple student device statuses.">
             </figure>
             <div class="feature-row__content">
@@ -350,38 +353,40 @@
             </div>
         </section>
 
-        <section class="section pilot-program" id="pilot" aria-labelledby="pilot-title">
+        <section class="section news" id="news" aria-labelledby="news-title">
             <div class="section-heading">
-                <h2 id="pilot-title">Proven in the Classroom</h2>
+                <h2 id="news-title">News</h2>
+                <p>Workshops, pilots, and recent milestones.</p>
             </div>
 
-            <div class="feature-row">
-                <div class="feature-row__content">
-                    <p class="eyebrow">Pilot Phase: 2024 – 2026</p>
-                    <h3>Validated in Higher Education</h3>
-                    <p>
-                        For the past two years, our AIoT ecosystem has served as the core curriculum and final project
-                        material for a leading UG course in HK.
-                        Through this rigorous academic environment, our previous generation of smart cars and playfields
-                        were tested by over 100+ students.
-                    </p>
-                    <p>
-                        This concept has been proven to provide a superior <strong>interactive learning
-                            experience</strong>, bridging the gap between design theory and technical implementation.
-                        Following this success, we are now evolving and extending this platform specifically for
-                        secondary school STEAM education.
-                    </p>
-                    <div style="margin-top: 2rem;">
-                        <a class="button button--dark" href="https://aioscout.github.io/FinalProjectDocs/"
-                            target="_blank">Technical Documentation</a>
-                    </div>
-                </div>
-                <figure class="image-card image-card--right">
-                    <img src="assets/GroupPhoto2025Fall.jpg" alt="Students testing the prototype in a HK UG course.">
-                    <figcaption>Previous iteration deployment in HK UG Course</figcaption>
-                </figure>
-            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <figure class="news-card__media">
+                        <img src="assets/workshop-2026.jpg" alt="Participants at the AI Literacy Workshop.">
+                    </figure>
+                    <p class="eyebrow">Oct 2026 · Workshop</p>
+                    <h3>AI Literacy Workshop</h3>
+                    <p>The workshop opened with an introductory lecture on physical AI, covering foundational
+                        components such as models, motors, and sensors. Participants then experienced the full AI
+                        workflow hands-on: collecting image data, labeling road signs, and training their own
+                        recognition model. Finally, they flashed the model onto a smart car and watched it detect
+                        signs and turn in live movement on the playfield — seeing their data drive real hardware.</p>
+                </article>
 
+                <article class="news-card">
+                    <figure class="news-card__media">
+                        <img src="assets/GroupPhoto2025Fall.jpg" alt="Students testing the prototype in a HK UG course.">
+                    </figure>
+                    <p class="eyebrow">2024 – 2026 · Pilot Program</p>
+                    <h3>Proven in the Classroom</h3>
+                    <p>Our AIoT ecosystem served as the core curriculum and final-project material for a leading UG
+                        course in HK, with the previous generation of smart cars and playfields tested by over 100
+                        students — proving a superior interactive learning experience. We are now extending the
+                        platform to secondary school STEAM education.</p>
+                    <a class="text-link" href="https://aioscout.github.io/FinalProjectDocs/"
+                        target="_blank">Technical Documentation</a>
+                </article>
+            </div>
         </section>
 
         <section class="section section--panel business" id="business" aria-labelledby="business-title">
@@ -493,8 +498,11 @@
 
             <div class="team-grid">
                 <article class="team-card">
+                    <div class="team-card__portrait">
+                        <img src="assets/team-jason.jpg" alt="Portrait of CHAN Ming Chun, Jason">
+                    </div>
                     <h3>CHAN Ming Chun, Jason</h3>
-                    <p class="eyebrow">Founder | Hardware Engineering Lead</p>
+                    <p class="eyebrow">Founder<br>Hardware Engineering Lead</p>
                     <p>An electronic and robotic engineer specializing in the structural and circuit design of
                         high-performance systems. As the former Captain of the RoboMaster Team ENTERPRIZE, he brings
                         elite competitive robotics experience to the R&D process, overseeing the mechanical and
@@ -502,8 +510,11 @@
                 </article>
 
                 <article class="team-card">
+                    <div class="team-card__portrait">
+                        <img src="assets/team-vicky.jpg" alt="Portrait of ZHANG Yunxin, Vicky">
+                    </div>
                     <h3>ZHANG Yunxin, Vicky</h3>
-                    <p class="eyebrow">Co-Founder | Software Engineering Lead</p>
+                    <p class="eyebrow">Co-Founder<br>Software Engineering Lead</p>
                     <p>An HKUST Integrative Systems and Design (ISD) student specializing in full-stack architecture and
                         systems engineering. As the Lead Software Developer, she engineered the frontend and backend
                         framework for the AIoT ecosystem. She is driven by a mission to make high-end technology
@@ -513,6 +524,9 @@
                 </article>
 
                 <article class="team-card">
+                    <div class="team-card__portrait">
+                        <img src="assets/team-song.jpg" alt="Portrait of Prof. SONG Sheunghui">
+                    </div>
                     <h3>Prof. SONG Sheunghui</h3>
                     <p class="eyebrow">Technical Consultant</p>
                     <p>Dr. S.H. Song is now an Associate Professor jointly appointed by the Division of Integrative
