@@ -1614,18 +1614,6 @@ main>.section--panel:not(.hero) {
     flex-direction: column;
 }
 
-/* The Back button is hidden on smaller screens site-wide, but on the links
-   page (reached via QR, mostly on phones) it is the explicit way home */
-.links-page__header .header-cta {
-    display: inline-flex;
-}
-
-@media (max-width: 350px) {
-    .links-page__header .header-cta {
-        display: none;
-    }
-}
-
 .links-hero {
     display: flex;
     flex: 1 1 auto;
