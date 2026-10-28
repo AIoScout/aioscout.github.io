@@ -572,8 +572,10 @@ main>.section--panel:not(.hero) {
     margin-left: -50vw;
     object-fit: cover;
 
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 22%, #000 78%, transparent 100%);
-    mask-image: linear-gradient(to bottom, transparent 0%, #000 22%, #000 78%, transparent 100%);
+    /* the video's own edge rows leak as a 1px seam at the band boundary;
+       fade them out (video is only faintly visible through the scrim) */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 10%, #000 90%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 10%, #000 90%, transparent 100%);
 }
 
 .hero__overlay {
@@ -583,10 +585,15 @@ main>.section--panel:not(.hero) {
     width: 100vw;
     height: 70%;
     margin-left: -50vw;
-    background: var(--hero-overlay);
-
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 22%, #000 78%, transparent 100%);
-    mask-image: linear-gradient(to bottom, transparent 0%, #000 22%, #000 78%, transparent 100%);
+    /* solid page colour at the band edges dissolving into the scrim —
+       no seam and no gradient kink at the boundaries */
+    background: linear-gradient(to bottom,
+        var(--color-bg) 0%,
+        var(--color-bg) 8%,
+        var(--hero-overlay) 28%,
+        var(--hero-overlay) 72%,
+        var(--color-bg) 92%,
+        var(--color-bg) 100%);
 }
 
 .hero__inner {
