@@ -1,4 +1,5 @@
 :root {
+    color-scheme: light;
     --color-black: #000000;
     --color-ink: #1a1c1c;
     --color-muted: #5e5e5e;
@@ -10,6 +11,14 @@
     --color-panel: #f3f4f3;
     --color-border: #d8d9d8;
     --color-rule: #e2e2e2;
+    --color-canvas: #ffffff;
+    --color-on-primary: #ffffff;
+    --color-muted-warm: #78716c;
+    --color-mark: #f58331;
+    --icon-field: #1a1c1c;
+    --hero-overlay: rgba(249, 249, 248, 0.78);
+    --ink-70: rgba(26, 28, 28, 0.7);
+    --on-primary-70: rgba(255, 255, 255, 0.7);
     --font-main: "Inter", Arial, sans-serif;
     --max-page: 1320px;
     --section-padding-x: 128px;
@@ -17,6 +26,33 @@
     --header-height: 96px;
     --hero-min-height: calc(100vh - var(--header-height));
 }
+
+/* Dark theme — token set from the design guideline (colors-dark).
+   --color-black is the primary control ink (borders, CTAs, toggles),
+   so it inverts to white; orange holds as the continuity cue. */
+[data-theme="dark"] {
+    color-scheme: dark;
+    --color-black: #ffffff;
+    --color-on-primary: #000000;
+    --color-ink: #f2f2f0;
+    --color-muted: #8f8f8a;
+    --color-copy: #b6b6b2;
+    --color-subtle: #6e6e6a;
+    --color-muted-warm: #8f8f8a;
+    --color-orange: #f58331;
+    --color-purple: #9a9ade;
+    --color-mark: #9a9ade;
+    --color-bg: #101214;
+    --color-canvas: #191b1e;
+    --color-panel: #14161a;
+    --color-border: #33363a;
+    --color-rule: #2c2f33;
+    --icon-field: #33363a;
+    --hero-overlay: rgba(16, 18, 20, 0.85);
+    --ink-70: rgba(242, 242, 240, 0.7);
+    --on-primary-70: rgba(0, 0, 0, 0.7);
+}
+
 
 * {
     box-sizing: border-box;
@@ -73,7 +109,7 @@ ol {
 .site-header,
 .site-footer {
     width: 100%;
-    background: #ffffff;
+    background: var(--color-canvas);
     border-color: var(--color-black);
     border-style: solid;
 }
@@ -101,10 +137,16 @@ ol {
     letter-spacing: 0.05em;
 }
 
-.site-logo img {
+.site-logo .logo-mark {
     width: 28px;
     height: 28px;
 }
+
+.logo-mark {
+    flex: 0 0 auto;
+    color: var(--color-mark);
+}
+
 
 .site-nav {
     display: flex;
@@ -158,7 +200,7 @@ ol {
 
 .button--dark {
     background: var(--color-black);
-    color: #ffffff;
+    color: var(--color-on-primary);
 }
 
 .button--dark:hover,
@@ -168,7 +210,7 @@ ol {
 }
 
 .button--outline {
-    background: #ffffff;
+    background: var(--color-canvas);
     color: var(--color-black);
     padding: 9px 17px;
     min-height: 36px;
@@ -178,7 +220,7 @@ ol {
 .button--outline:hover,
 .button--outline:focus-visible {
     background: var(--color-black);
-    color: #ffffff;
+    color: var(--color-on-primary);
 }
 
 .nav-toggle {
@@ -187,7 +229,7 @@ ol {
     height: 44px;
     padding: 10px;
     border: 1px solid var(--color-black);
-    background: #ffffff;
+    background: var(--color-canvas);
     cursor: pointer;
 }
 
@@ -198,6 +240,51 @@ ol {
     margin: 5px 0;
     background: var(--color-black);
     transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.header-actions {
+    position: relative;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 1px solid var(--color-black);
+    background: var(--color-canvas);
+    color: var(--color-black);
+    cursor: pointer;
+    transition: background 180ms ease, color 180ms ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+    background: var(--color-black);
+    color: var(--color-on-primary);
+}
+
+.theme-toggle svg {
+    width: 18px;
+    height: 18px;
+}
+
+.theme-toggle .theme-toggle__sun {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle .theme-toggle__sun {
+    display: block;
+}
+
+[data-theme="dark"] .theme-toggle .theme-toggle__moon {
+    display: none;
 }
 
 .section {
@@ -276,8 +363,8 @@ main>.section--panel:not(.hero) {
     display: flex;
     gap: 40px;
     margin-top: 25px;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+    border-top: 1px solid var(--color-rule);
+    border-bottom: 1px solid var(--color-rule);
     padding: 20px 0;
 }
 
@@ -287,7 +374,7 @@ main>.section--panel:not(.hero) {
 
 /* Vertical line separator between columns on desktop */
 .module-column:first-child {
-    border-right: 1px solid #eee;
+    border-right: 1px solid var(--color-rule);
 }
 
 .module-header {
@@ -403,7 +490,7 @@ main>.section--panel:not(.hero) {
     }
 
     .module-column:first-child {
-        border-right: 1px solid #eee;
+        border-right: 1px solid var(--color-rule);
         border-bottom: none;
         padding-bottom: 0;
     }
@@ -437,7 +524,7 @@ main>.section--panel:not(.hero) {
     /* This creates the space between the content of one phase and the next */
     padding-left: 30px;
     /* Space between the vertical line and your text */
-    border-left: 2px solid #e0e0e0;
+    border-left: 2px solid var(--color-rule);
     /* The vertical line */
     margin-left: 20px;
 }
@@ -478,6 +565,9 @@ main>.section--panel:not(.hero) {
     height: 70%;
     margin-left: -50vw;
     object-fit: cover;
+
+    -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
 }
 
 .hero__overlay {
@@ -487,7 +577,10 @@ main>.section--panel:not(.hero) {
     width: 100vw;
     height: 70%;
     margin-left: -50vw;
-    background: rgba(249, 249, 248, 0.78);
+    background: var(--hero-overlay);
+
+    -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
 }
 
 .hero__inner {
@@ -685,7 +778,7 @@ main>.section--panel:not(.hero) {
     justify-content: center;
     padding: 0;
     border: 1px solid var(--color-ink);
-    background: #ffffff;
+    background: var(--color-canvas);
     color: transparent;
     font-size: 0;
     line-height: 0;
@@ -842,7 +935,7 @@ main>.section--panel:not(.hero) {
 
 .lesson-list p {
     margin-top: 7px;
-    color: rgba(26, 28, 28, 0.7);
+    color: var(--ink-70);
     font-size: 16px;
     line-height: 1.6;
 }
@@ -871,7 +964,7 @@ main>.section--panel:not(.hero) {
     height: 96px;
     margin-bottom: 32px;
     border-radius: 999px;
-    background: var(--color-ink);
+    background: var(--icon-field);
     filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.25));
 }
 
@@ -1078,13 +1171,13 @@ main>.section--panel:not(.hero) {
 }
 
 .footer-nav a {
-    color: #78716c;
+    color: var(--color-muted-warm);
     font-weight: 400;
     letter-spacing: 0.2em;
 }
 
 .site-footer p {
-    color: #78716c;
+    color: var(--color-muted-warm);
     font-size: 10px;
     line-height: 1.6;
     letter-spacing: 0.2em;
@@ -1203,7 +1296,7 @@ main>.section--panel:not(.hero) {
         gap: 0;
         padding: 18px 20px;
         border-bottom: 1px solid var(--color-black);
-        background: #ffffff;
+        background: var(--color-canvas);
     }
 
     .site-nav.is-open {
@@ -1523,7 +1616,7 @@ main>.section--panel:not(.hero) {
     gap: 16px;
     padding: 18px 20px;
     border: 1px solid var(--color-black);
-    background: #ffffff;
+    background: var(--color-canvas);
     color: var(--color-ink);
     transition: background 180ms ease, color 180ms ease, transform 180ms ease;
 }
@@ -1531,7 +1624,7 @@ main>.section--panel:not(.hero) {
 .link-card:hover,
 .link-card:focus-visible {
     background: var(--color-black);
-    color: #ffffff;
+    color: var(--color-on-primary);
     transform: translateY(-1px);
 }
 
@@ -1565,14 +1658,14 @@ main>.section--panel:not(.hero) {
 }
 
 .link-card__handle {
-    color: rgba(26, 28, 28, 0.7);
+    color: var(--ink-70);
     font-size: 14px;
     line-height: 1.5;
 }
 
 .link-card:hover .link-card__handle,
 .link-card:focus-visible .link-card__handle {
-    color: rgba(249, 249, 248, 0.7);
+    color: var(--on-primary-70);
 }
 
 .link-card__arrow {
@@ -1617,4 +1710,22 @@ main>.section--panel:not(.hero) {
         align-items: center;
         padding: 20px 24px;
     }
+}
+/* Dark-theme asset treatment: photos dim slightly to sit on dark canvas;
+   the black arrow and loop mark invert to stay visible. */
+[data-theme="dark"] img {
+    filter: brightness(0.86);
+}
+
+[data-theme="dark"] .business-flow__arrow,
+[data-theme="dark"] .business-loop__mark {
+    filter: invert(1) brightness(0.86);
+}
+
+/* Smooth surface flip when toggling themes */
+body,
+.site-header,
+.site-footer,
+.section--panel::before {
+    transition: background-color 220ms ease, border-color 220ms ease, color 220ms ease;
 }
