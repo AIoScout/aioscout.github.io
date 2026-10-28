@@ -1194,18 +1194,32 @@ main>.section--panel:not(.hero) {
     text-transform: uppercase;
 }
 
+@media (max-width: 1440px) {
+    .site-nav {
+        gap: 16px;
+    }
+
+    .header-cta {
+        display: none;
+    }
+}
+
 @media (max-width: 1180px) {
     :root {
         --section-padding-x: 72px;
     }
 
     .site-header {
-        padding-right: 36px;
-        padding-left: 36px;
+        padding-right: 28px;
+        padding-left: 28px;
     }
 
     .site-nav {
-        gap: 18px;
+        gap: 10px;
+    }
+
+    .site-nav a {
+        font-size: 11px;
     }
 
     .image-card {
