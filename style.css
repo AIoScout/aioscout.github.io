@@ -166,6 +166,9 @@ ol {
 }
 
 .site-nav a {
+    /* 8px top balances the 6px padding + 2px underline below, so the label
+       is vertically centered like the logo and CTA on either side */
+    padding-top: 8px;
     padding-bottom: 6px;
     border-bottom: 2px solid transparent;
 }
@@ -285,12 +288,6 @@ ol {
 
 [data-theme="dark"] .theme-toggle .theme-toggle__moon {
     display: none;
-}
-
-[data-theme="dark"] .hero .button--dark {
-    background: #000000;
-    border-color: #000000;
-    color: #ffffff;
 }
 
 .section {
