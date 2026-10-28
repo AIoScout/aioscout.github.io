@@ -287,6 +287,12 @@ ol {
     display: none;
 }
 
+[data-theme="dark"] .hero .button--dark {
+    background: #000000;
+    border-color: #000000;
+    color: #ffffff;
+}
+
 .section {
     position: relative;
     width: 100%;
@@ -566,8 +572,8 @@ main>.section--panel:not(.hero) {
     margin-left: -50vw;
     object-fit: cover;
 
-    -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 22%, #000 78%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 22%, #000 78%, transparent 100%);
 }
 
 .hero__overlay {
@@ -579,8 +585,8 @@ main>.section--panel:not(.hero) {
     margin-left: -50vw;
     background: var(--hero-overlay);
 
-    -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 78%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 22%, #000 78%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 22%, #000 78%, transparent 100%);
 }
 
 .hero__inner {
