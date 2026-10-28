@@ -1195,6 +1195,8 @@ main>.section--panel:not(.hero) {
 }
 
 @media (max-width: 1440px) {
+    /* the nav needs most of the header width below the 1320 max page;
+       tighten its gap and let the contact CTA rest until things fit again */
     .site-nav {
         gap: 16px;
     }
