@@ -173,6 +173,12 @@ ol {
     border-bottom: 2px solid transparent;
 }
 
+/* contact entry lives in the mobile dropdown only; on wider screens the
+   header CTA covers it */
+.site-nav__contact {
+    display: none;
+}
+
 .site-nav a:hover,
 .site-nav a:focus-visible,
 .site-nav a.is-active {
@@ -1298,6 +1304,21 @@ main>.section--panel:not(.hero) {
     .nav-toggle {
         position: relative;
         z-index: 30;
+        display: block;
+    }
+
+    /* match the hamburger's 44px so the two header buttons read as a pair */
+    .theme-toggle {
+        width: 44px;
+        height: 44px;
+    }
+
+    .theme-toggle svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .site-nav__contact {
         display: block;
     }
 
