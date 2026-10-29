@@ -361,8 +361,7 @@ main>.section--panel:not(.hero) {
 .feature-row h2,
 .timeline-section h2,
 .faq-title,
-.news-title,
-.curriculum-title {
+.news-title {
     color: var(--color-ink);
     font-size: 48px;
     font-weight: 600;
@@ -1283,8 +1282,7 @@ main>.section--panel:not(.hero) {
     .feature-row h2,
     .timeline-section h2,
     .faq-title,
-    .news-title,
-    .curriculum-title {
+    .news-title {
         font-size: 42px;
     }
 
@@ -1443,8 +1441,7 @@ main>.section--panel:not(.hero) {
     .feature-row h2,
     .timeline-section h2,
     .faq-title,
-    .news-title,
-    .curriculum-title {
+    .news-title {
         font-size: 30px;
     }
 
@@ -1569,8 +1566,7 @@ main>.section--panel:not(.hero) {
     .feature-row h2,
     .timeline-section h2,
     .faq-title,
-    .news-title,
-    .curriculum-title {
+    .news-title {
         font-size: 28px;
     }
 
@@ -1761,8 +1757,7 @@ main>.section--panel:not(.hero) {
 
 /* FAQ page (/faq) */
 .faq-page,
-.news-page,
-.curriculum-page {
+.news-page {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -1771,8 +1766,7 @@ main>.section--panel:not(.hero) {
 }
 
 .faq-page main,
-.news-page main,
-.curriculum-page main {
+.news-page main {
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
@@ -2073,23 +2067,12 @@ main>.section--panel:not(.hero) {
     }
 }
 
-/* Curriculum page (/curriculum) */
-.curriculum-listing {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 96px;
-    padding-bottom: 112px;
-    /* native #curriculum jump from the nav lands clear of the sticky header */
-    scroll-margin-top: var(--header-height);
+/* Curriculum pathways (three-focus grid on the index page) */
+.curriculum .section-heading .eyebrow {
+    margin-bottom: 8px;
 }
 
-.curriculum-listing .section-heading {
-    margin-bottom: 64px;
-}
-
-/* three pathways side by side so the focus choice reads at a glance */
-.curriculum-listing .curriculum-grid {
+.curriculum .curriculum-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 48px;
 }
@@ -2145,13 +2128,12 @@ main>.section--panel:not(.hero) {
     text-transform: uppercase;
 }
 
-.curriculum-listing__note {
+.curriculum .more-text {
     margin-top: 48px;
-    text-align: center;
 }
 
 @media (max-width: 1024px) {
-    .curriculum-listing .curriculum-grid {
+    .curriculum .curriculum-grid {
         grid-template-columns: 1fr;
         gap: 44px;
     }
@@ -2159,17 +2141,6 @@ main>.section--panel:not(.hero) {
     /* single column: no cross-card alignment to hold */
     .curriculum-track__lead {
         min-height: 0;
-    }
-}
-
-@media (max-width: 768px) {
-    .curriculum-listing {
-        padding-top: 56px;
-        padding-bottom: 72px;
-    }
-
-    .curriculum-listing .section-heading {
-        margin-bottom: 36px;
     }
 }
 /* Dark-theme asset treatment: photos dim slightly to sit on dark canvas;

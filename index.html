@@ -37,18 +37,17 @@
         <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
             <a href="#vision" class="is-active">Vision</a>
             <a href="#solution">Solution</a>
-            <!-- entries below hidden while their sections are reworked into subpages
-            <a href="#outcomes">Outcomes</a>
             <a href="#curriculum">Curriculum</a>
-            <a href="#development-progress">Previous</a>
-            -->
-            <a href="curriculum.html">Curriculum</a>
-            <a href="news.html">News</a>
             <a href="#business">Business Model</a>
             <a href="#timeline">Timeline</a>
             <a href="#about">About Us</a>
+            <a href="news.html">News</a>
             <a href="faq.html">FAQ</a>
             <a href="links.html" class="site-nav__contact">Contact us</a>
+            <!-- entries hidden while their sections are reworked into subpages
+            <a href="#outcomes">Outcomes</a>
+            <a href="#development-progress">Previous</a>
+            -->
         </nav>
 
         <div class="header-actions">
@@ -324,75 +323,58 @@
         </section>
         -->
 
-        <!-- Curriculum section — moved to curriculum.html and rewritten as three learning pathways
         <section class="section curriculum" id="curriculum" aria-labelledby="curriculum-title">
             <div class="section-heading">
-                <h2 id="curriculum-title">Built for the Classroom</h2>
+                <p class="eyebrow">Learning Pathways</p>
+                <h2 id="curriculum-title">Curriculum</h2>
+                <p>Course materials cover three focuses: how the car moves and senses, how it finds its route
+                    and talks to the cloud, and machine learning that runs on the car itself. The content each
+                    course covers is freely selectable, and every pathway ends with a hands-on final project.</p>
             </div>
 
             <div class="curriculum-grid">
                 <article class="curriculum-track">
-                    <h3>Junior Form</h3>
-                    <ol class="lesson-list">
-                        <li>
-                            <span>01.</span>
-                            <div>
-                                <h4>Introduction to Robotics</h4>
-                                <p>Master differential drive mechanics using intuitive block coding to translate logic
-                                    into physical movement.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <span>02.</span>
-                            <div>
-                                <h4>Sensing the World</h4>
-                                <p>Enable autonomous interaction through ultrasonic and IR sensors, introducing
-                                    fundamental IoT logic.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <span>03.</span>
-                            <div>
-                                <h4>Visual Perception</h4>
-                                <p>Introduction to Computer Vision by implementing Edge-AI models for basic road sign
-                                    and color detection.</p>
-                            </div>
-                        </li>
-                    </ol>
+                    <p class="eyebrow">Pathway 01</p>
+                    <h3>Robotics</h3>
+                    <p class="curriculum-track__lead">How the car moves and senses.</p>
+                    <ul class="curriculum-topics">
+                        <li>Motors, PWM, and encoders</li>
+                        <li>Differential drive kinematics</li>
+                        <li>Ultrasonic and IMU sensing</li>
+                        <li>PID control and sensor fusion</li>
+                    </ul>
+                    <p class="curriculum-track__final">Final project: straight-line PID with an obstacle stop</p>
                 </article>
 
                 <article class="curriculum-track">
-                    <h3>Senior Form</h3>
-                    <ol class="lesson-list">
-                        <li>
-                            <span>01.</span>
-                            <div>
-                                <h4>Advanced Control Systems</h4>
-                                <p>Implement PID control loops to manage mechanical error and ensure industrial-grade
-                                    precision navigation.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <span>02.</span>
-                            <div>
-                                <h4>Sensor Fusion & IoT</h4>
-                                <p>Combine telemetry from vision and IMU sensors into a live dashboard for predictive
-                                    system modeling.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <span>03.</span>
-                            <div>
-                                <h4>Self-Driving Capstone</h4>
-                                <p>Integrate path-planning and vision systems to navigate a dynamic game field with zero
-                                    manual intervention.</p>
-                            </div>
-                        </li>
-                    </ol>
+                    <p class="eyebrow">Pathway 02</p>
+                    <h3>IoT</h3>
+                    <p class="curriculum-track__lead">How the car finds its route and talks to the cloud.</p>
+                    <ul class="curriculum-topics">
+                        <li>Graphs and Dijkstra routing</li>
+                        <li>FreeRTOS multitasking</li>
+                        <li>Firebase realtime telemetry</li>
+                        <li>RFID playfield localization</li>
+                    </ul>
+                    <p class="curriculum-track__final">Final project: the fleet dashboard</p>
+                </article>
+
+                <article class="curriculum-track">
+                    <p class="eyebrow">Pathway 03</p>
+                    <h3>Physical AI</h3>
+                    <p class="curriculum-track__lead">Machine learning that runs on the car itself.</p>
+                    <ul class="curriculum-topics">
+                        <li>Collecting and labeling images</li>
+                        <li>Training a CNN without code</li>
+                        <li>Live inference on the ESP32-P4</li>
+                        <li>Road-sign recognition</li>
+                    </ul>
+                    <p class="curriculum-track__final">Final project: a vision-driven mission</p>
                 </article>
             </div>
+
+            <p class="more-text">Further units are in preparation for every pathway.</p>
         </section>
-        -->
 
         <!-- News section — moved to its own subpage at news.html
         <section class="section news" id="news" aria-labelledby="news-title">
