@@ -361,7 +361,8 @@ main>.section--panel:not(.hero) {
 .feature-row h2,
 .timeline-section h2,
 .faq-title,
-.news-title {
+.news-title,
+.curriculum-title {
     color: var(--color-ink);
     font-size: 48px;
     font-weight: 600;
@@ -1282,7 +1283,8 @@ main>.section--panel:not(.hero) {
     .feature-row h2,
     .timeline-section h2,
     .faq-title,
-    .news-title {
+    .news-title,
+    .curriculum-title {
         font-size: 42px;
     }
 
@@ -1441,7 +1443,8 @@ main>.section--panel:not(.hero) {
     .feature-row h2,
     .timeline-section h2,
     .faq-title,
-    .news-title {
+    .news-title,
+    .curriculum-title {
         font-size: 30px;
     }
 
@@ -1566,7 +1569,8 @@ main>.section--panel:not(.hero) {
     .feature-row h2,
     .timeline-section h2,
     .faq-title,
-    .news-title {
+    .news-title,
+    .curriculum-title {
         font-size: 28px;
     }
 
@@ -1757,7 +1761,8 @@ main>.section--panel:not(.hero) {
 
 /* FAQ page (/faq) */
 .faq-page,
-.news-page {
+.news-page,
+.curriculum-page {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -1766,7 +1771,8 @@ main>.section--panel:not(.hero) {
 }
 
 .faq-page main,
-.news-page main {
+.news-page main,
+.curriculum-page main {
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
@@ -2064,6 +2070,106 @@ main>.section--panel:not(.hero) {
 
     .news-row__media img {
         box-shadow: 12px -12px 0 var(--color-ink);
+    }
+}
+
+/* Curriculum page (/curriculum) */
+.curriculum-listing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 96px;
+    padding-bottom: 112px;
+    /* native #curriculum jump from the nav lands clear of the sticky header */
+    scroll-margin-top: var(--header-height);
+}
+
+.curriculum-listing .section-heading {
+    margin-bottom: 64px;
+}
+
+/* three pathways side by side so the focus choice reads at a glance */
+.curriculum-listing .curriculum-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 48px;
+}
+
+.curriculum-track .eyebrow {
+    margin-bottom: 10px;
+}
+
+.curriculum-track__lead {
+    margin-top: 14px;
+    /* reserve two lines so the topic lists start level across all three columns */
+    min-height: 52px;
+    color: var(--color-muted);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.curriculum-topics {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+}
+
+.curriculum-topics li {
+    position: relative;
+    padding-left: 18px;
+    color: var(--color-copy);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.curriculum-topics li::before {
+    position: absolute;
+    top: 0.6em;
+    left: 0;
+    width: 8px;
+    height: 2px;
+    background: var(--color-orange);
+    content: "";
+}
+
+.curriculum-track__final {
+    padding-top: 18px;
+    border-top: 1px solid var(--color-rule);
+    color: var(--color-purple);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.curriculum-listing__note {
+    margin-top: 48px;
+    text-align: center;
+}
+
+@media (max-width: 1024px) {
+    .curriculum-listing .curriculum-grid {
+        grid-template-columns: 1fr;
+        gap: 44px;
+    }
+
+    /* single column: no cross-card alignment to hold */
+    .curriculum-track__lead {
+        min-height: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .curriculum-listing {
+        padding-top: 56px;
+        padding-bottom: 72px;
+    }
+
+    .curriculum-listing .section-heading {
+        margin-bottom: 36px;
     }
 }
 /* Dark-theme asset treatment: photos dim slightly to sit on dark canvas;
