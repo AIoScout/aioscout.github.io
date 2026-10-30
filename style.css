@@ -359,7 +359,9 @@ main>.section--panel:not(.hero) {
 
 .section-heading h2,
 .feature-row h2,
-.timeline-section h2 {
+.timeline-section h2,
+.faq-title,
+.news-title {
     color: var(--color-ink);
     font-size: 48px;
     font-weight: 600;
@@ -1107,6 +1109,9 @@ main>.section--panel:not(.hero) {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* portraits are transparent cutouts; back them with white so the dark
+       theme's panel doesn't show through the silhouette */
+    background: #ffffff;
 }
 
 .team-card h3 {
@@ -1278,7 +1283,9 @@ main>.section--panel:not(.hero) {
 
     .section-heading h2,
     .feature-row h2,
-    .timeline-section h2 {
+    .timeline-section h2,
+    .faq-title,
+    .news-title {
         font-size: 42px;
     }
 
@@ -1435,7 +1442,9 @@ main>.section--panel:not(.hero) {
 
     .section-heading h2,
     .feature-row h2,
-    .timeline-section h2 {
+    .timeline-section h2,
+    .faq-title,
+    .news-title {
         font-size: 30px;
     }
 
@@ -1558,7 +1567,9 @@ main>.section--panel:not(.hero) {
 
     .section-heading h2,
     .feature-row h2,
-    .timeline-section h2 {
+    .timeline-section h2,
+    .faq-title,
+    .news-title {
         font-size: 28px;
     }
 
@@ -1744,6 +1755,395 @@ main>.section--panel:not(.hero) {
     .links-page__footer {
         align-items: center;
         padding: 20px 24px;
+    }
+}
+
+/* FAQ page (/faq) */
+.faq-page,
+.news-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* On mobile browsers 100vh ignores the URL bar; dvh tracks the visible area */
+    min-height: 100dvh;
+}
+
+.faq-page main,
+.news-page main {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+}
+
+.faq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 96px;
+    padding-bottom: 112px;
+    /* native #faq jump from the nav lands clear of the sticky header */
+    scroll-margin-top: var(--header-height);
+}
+
+.faq .section-heading {
+    margin-bottom: 56px;
+}
+
+.faq .section-heading .eyebrow {
+    margin-bottom: 8px;
+}
+
+.faq-list {
+    width: 100%;
+    max-width: 896px;
+    border-top: 1px solid var(--color-black);
+    border-bottom: 1px solid var(--color-black);
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--color-black);
+}
+
+.faq-item:last-child {
+    border-bottom: 0;
+}
+
+.faq-item__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 22px 4px;
+    color: var(--color-ink);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    cursor: pointer;
+    list-style: none;
+    transition: color 180ms ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.faq-item__question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item__question::marker {
+    content: "";
+}
+
+.faq-item__question:hover,
+.faq-item__question:focus-visible,
+.faq-item[open] > .faq-item__question {
+    color: var(--color-orange);
+}
+
+.faq-item__marker {
+    position: relative;
+    flex: 0 0 auto;
+    width: 14px;
+    height: 14px;
+}
+
+.faq-item__marker::before,
+.faq-item__marker::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 2px;
+    background: var(--color-black);
+    content: "";
+    transform: translate(-50%, -50%);
+    transition: transform 200ms ease, background 180ms ease;
+}
+
+.faq-item__marker::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.faq-item__question:hover .faq-item__marker::before,
+.faq-item__question:hover .faq-item__marker::after,
+.faq-item[open] .faq-item__marker::before,
+.faq-item[open] .faq-item__marker::after {
+    background: var(--color-orange);
+}
+
+/* the vertical stroke folds flat into a minus sign while open */
+.faq-item[open] .faq-item__marker::after {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.faq-item__answer {
+    max-width: 760px;
+    padding: 2px 40px 26px 4px;
+    color: var(--color-muted);
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.faq-item__answer p + p {
+    margin-top: 12px;
+}
+
+@keyframes faq-answer-in {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.faq-item[open] .faq-item__answer {
+    animation: faq-answer-in 240ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .faq-item[open] .faq-item__answer {
+        animation: none;
+    }
+}
+
+.faq-cta {
+    margin-top: 88px;
+    text-align: center;
+}
+
+.faq-cta h3 {
+    color: var(--color-ink);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+}
+
+.faq-cta p {
+    max-width: 480px;
+    margin: 10px auto 0;
+    color: var(--color-muted);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.faq-cta .button {
+    margin-top: 28px;
+}
+
+@media (max-width: 768px) {
+    .faq {
+        padding-top: 56px;
+        padding-bottom: 72px;
+    }
+
+    .faq .section-heading {
+        margin-bottom: 36px;
+    }
+
+    .faq-item__question {
+        padding: 18px 2px;
+        font-size: 17px;
+    }
+
+    .faq-item__answer {
+        padding: 2px 28px 22px 2px;
+    }
+
+    .faq-cta {
+        margin-top: 64px;
+    }
+}
+
+/* News page (/news) */
+.news-listing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 96px;
+    padding-bottom: 112px;
+    /* native #news jump from the nav lands clear of the sticky header */
+    scroll-margin-top: var(--header-height);
+}
+
+.news-listing .section-heading {
+    margin-bottom: 56px;
+}
+
+/* one row per event — image left, text right */
+.news-rows {
+    display: flex;
+    width: 100%;
+    max-width: 1120px;
+    flex-direction: column;
+    gap: 96px;
+}
+
+.news-row {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+}
+
+.news-row__media {
+    flex: 0 0 400px;
+}
+
+.news-row__media img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    box-shadow: 16px -16px 0 var(--color-ink);
+}
+
+.news-row__body {
+    display: flex;
+    flex: 1 1 0;
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.news-row__body .eyebrow {
+    margin-bottom: 8px;
+}
+
+.news-row__body h3 {
+    color: var(--color-black);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.news-row__body p:not(.eyebrow) {
+    margin-top: 8px;
+    color: var(--color-copy);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+@media (max-width: 1180px) {
+    .news-rows {
+        gap: 72px;
+    }
+
+    .news-row {
+        gap: 48px;
+    }
+
+    .news-row__media {
+        flex-basis: 340px;
+    }
+}
+
+@media (max-width: 768px) {
+    .news-listing {
+        padding-top: 56px;
+        padding-bottom: 72px;
+    }
+
+    .news-listing .section-heading {
+        margin-bottom: 36px;
+    }
+
+    .news-rows {
+        gap: 56px;
+    }
+
+    /* rows stack: image first, text below */
+    .news-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 30px;
+    }
+
+    .news-row__media {
+        flex-basis: auto;
+        width: min(100%, 360px);
+        align-self: center;
+    }
+
+    .news-row__media img {
+        box-shadow: 12px -12px 0 var(--color-ink);
+    }
+}
+
+/* Curriculum pathways (three-focus grid on the index page) */
+.curriculum .section-heading .eyebrow {
+    margin-bottom: 8px;
+}
+
+.curriculum .curriculum-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 48px;
+}
+
+.curriculum-track .eyebrow {
+    margin-bottom: 10px;
+}
+
+.curriculum-track__lead {
+    margin-top: 14px;
+    /* reserve two lines so the topic lists start level across all three columns */
+    min-height: 52px;
+    color: var(--color-muted);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.curriculum-topics {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+}
+
+.curriculum-topics li {
+    position: relative;
+    padding-left: 18px;
+    color: var(--color-copy);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.curriculum-topics li::before {
+    position: absolute;
+    top: 0.6em;
+    left: 0;
+    width: 8px;
+    height: 2px;
+    background: var(--color-orange);
+    content: "";
+}
+
+.curriculum-track__final {
+    padding-top: 18px;
+    border-top: 1px solid var(--color-rule);
+    color: var(--color-purple);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.curriculum .more-text {
+    margin-top: 48px;
+}
+
+@media (max-width: 1024px) {
+    .curriculum .curriculum-grid {
+        grid-template-columns: 1fr;
+        gap: 44px;
+    }
+
+    /* single column: no cross-card alignment to hold */
+    .curriculum-track__lead {
+        min-height: 0;
     }
 }
 /* Dark-theme asset treatment: photos dim slightly to sit on dark canvas;
