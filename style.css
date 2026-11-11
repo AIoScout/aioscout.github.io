@@ -2070,6 +2070,114 @@ main>.section--panel:not(.hero) {
     }
 }
 
+/* News article page (/news-edutech-asia-2026) */
+.news-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 64px;
+    padding-bottom: 112px;
+    scroll-margin-top: var(--header-height);
+}
+
+.news-article__head {
+    width: 100%;
+    max-width: 1120px;
+}
+
+.news-article__back {
+    display: inline-flex;
+    align-self: flex-start;
+    margin-bottom: 56px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--color-black);
+    color: var(--color-ink);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.news-article__media {
+    width: 100%;
+    max-width: 880px;
+}
+
+.news-article__media video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    box-shadow: 16px -16px 0 var(--color-ink);
+}
+
+.news-article__body {
+    max-width: 720px;
+    margin-top: 56px;
+    color: var(--color-copy);
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.news-article__body p + p {
+    margin-top: 1.25em;
+}
+
+.news-article__tags {
+    color: var(--color-subtle);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+}
+
+.news-article__back--end {
+    margin-top: 72px;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .news-article {
+        padding-top: 40px;
+        padding-bottom: 72px;
+    }
+
+    .news-article__back {
+        margin-bottom: 36px;
+    }
+
+    .news-article__media video {
+        box-shadow: 12px -12px 0 var(--color-ink);
+    }
+
+    .news-article__body {
+        margin-top: 36px;
+        font-size: 16px;
+    }
+}
+
+/* linked card on the news listing */
+.news-row__title-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.news-row__title-link:hover,
+.news-row__title-link:focus-visible {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 6px;
+}
+
+.news-row__media img {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.news-row__media:hover img,
+a.news-row__media:focus-visible img {
+    transform: translate(-4px, -4px);
+    box-shadow: 20px -20px 0 var(--color-ink);
+}
+
 /* Curriculum pathways (three-focus grid on the index page) */
 .curriculum .section-heading .eyebrow {
     margin-bottom: 8px;
